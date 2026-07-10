@@ -1,280 +1,313 @@
-GLIMPSE Pipeline Notes
-======================
+# GLIMPSE Pipeline Documentation
 
-This document explains the pipeline in a self-contained way: where the input comes from,
-what each stage computes, why the intermediate signals exist, and how the final benchmark
-metrics are produced.
+**A Technical Reference for Counterfactual Attention-Based Visual Hallucination Reduction**
 
-The core flow is:
+---
 
-1. load a POPE sample from disk
-2. build a counterfactual batch around that sample
-3. capture internal attention/head signals
-4. turn those signals into localization and routing decisions
-5. decode the final answer
-6. compare the answer to the gold label and record runtime statistics
+## Overview
 
-1. Entry point and control flow
+GLIMPSE is an inference pipeline that reduces visual hallucination in vision-language models by comparing internal attention behavior across counterfactual input variants, using the result to localize visual evidence, route examples through adaptive decoding paths, and generate answers with optional contrastive reinforcement.
 
-`scripts/run_eval.py` is the top-level runner. It reads command-line arguments such as:
+The pipeline operates as a six-stage flow:
 
-- `--model`
-- `--bench`
-- `--pope-json`
-- `--image-dir`
-- `--limit`
-- `--alpha-vhr`
-- `--out`
+1. Load a POPE sample from disk
+2. Build a counterfactual batch around that sample
+3. Capture internal attention and head signals
+4. Convert signals into localization and routing decisions
+5. Decode the final answer
+6. Compare the answer to the gold label and record runtime statistics
 
-Then it creates four main objects:
+---
 
-- `Llava15Adapter`: owns the model, tokenizer, device, and image/text preprocessing
-- `GlimpseConfig`: owns router thresholds and decoding parameters
-- `GlimpsePipeline`: owns the multi-stage inference logic
-- `Profiler`: collects timing and route statistics
+## Table of Contents
 
-For POPE, the script calls `eval.pope.run(...)`. The script itself does not evaluate answers or compute metrics.
-It only wires together the model pipeline and the benchmark driver.
+1. [Entry Point and Control Flow](#1-entry-point-and-control-flow)
+2. [Data Loading from POPE](#2-data-loading-from-pope)
+3. [Input to the Model Pipeline](#3-input-to-the-model-pipeline)
+4. [Stage 0 — Unified Counterfactual Prefill (UCP)](#4-stage-0--unified-counterfactual-prefill-ucp)
+5. [Capturing Internal Signals](#5-capturing-internal-signals)
+6. [Stage 0 Metrics — Activations to Evidence Signals](#6-stage-0-metrics--turning-activations-into-evidence-signals)
+7. [Stage 1 — Localization](#7-stage-1--localization)
+8. [Stage 2 — Routing](#8-stage-2--routing)
+9. [Stage 3/4 — Decoding and Answer Generation](#9-stage-34--decoding-and-answer-generation)
+10. [Pipeline Output](#10-what-glimpsepipelinerun-returns)
+11. [Benchmark Scoring in POPE](#11-benchmark-scoring-in-pope)
+12. [Efficiency Scoring](#12-efficiency-scoring)
+13. [Reading a Sample Run](#13-how-to-read-your-current-run)
+14. [End-to-End Mental Model](#14-end-to-end-mental-model)
+15. [Diagram and Stage Reference Table](#15-diagram-style-version)
 
-2. Data loading from POPE
+---
 
-`eval/pope.py` opens the POPE JSON file and reads one JSON object per line. Each record is expected to contain:
+## 1. Entry Point and Control Flow
 
-- `image`: the relative image filename
-- `text`: the question or prompt
-- `label`: the gold yes/no answer
+`scripts/run_eval.py` is the top-level runner. It accepts the following command-line arguments:
 
-For every sample, it loads the image from disk with:
+| Argument | Purpose |
+|---|---|
+| `--model` | Specifies the model adapter to use |
+| `--bench` | Specifies the benchmark to run |
+| `--pope-json` | Path to the POPE dataset JSON |
+| `--image-dir` | Path to the image directory |
+| `--limit` | Caps the number of samples processed |
+| `--alpha-vhr` | VHR reinforcement strength |
+| `--out` | Output path for results |
 
-`PIL.Image.open(os.path.join(image_dir, item["image"]))`
+The runner instantiates four core objects:
 
-and converts it to RGB.
+- **`Llava15Adapter`** — owns the model, tokenizer, device, and image/text preprocessing
+- **`GlimpseConfig`** — owns router thresholds and decoding parameters
+- **`GlimpsePipeline`** — owns the multi-stage inference logic
+- **`Profiler`** — collects timing and route statistics
 
-Important detail: the pipeline does not download data, resolve datasets, or fetch anything from the network.
-The benchmark wrapper does local file I/O and passes the loaded image plus question into the pipeline.
+For POPE evaluation, the script delegates to `eval.pope.run(...)`. The script itself performs no scoring or answer evaluation — it only wires together the model pipeline and the benchmark driver.
 
-3. Input to the model pipeline
+---
 
-Each sample passed into `GlimpsePipeline.run(image, query)` contains only:
+## 2. Data Loading from POPE
+
+`eval/pope.py` opens the POPE JSON file and reads one JSON object per line. Each record contains:
+
+- `image` — the relative image filename
+- `text` — the question or prompt
+- `label` — the gold yes/no answer
+
+For each sample, the image is loaded from disk via:
+
+```python
+PIL.Image.open(os.path.join(image_dir, item["image"]))
+```
+
+and converted to RGB.
+
+> **Note:** The pipeline performs no network access. All data loading and dataset resolution happen locally; the benchmark wrapper reads the image and question from disk and passes them directly into the pipeline.
+
+---
+
+## 3. Input to the Model Pipeline
+
+Each sample passed into `GlimpsePipeline.run(image, query)` consists of only:
 
 - a PIL image
 - a natural-language query
 
-At this point the benchmark layer has already done all loading and parsing.
-The GLIMPSE pipeline only transforms that image/query pair into a final answer plus diagnostic metadata.
+All loading and parsing has already occurred at the benchmark layer. The GLIMPSE pipeline's sole responsibility is transforming this image/query pair into a final answer plus diagnostic metadata.
 
-4. Stage 0: Unified Counterfactual Prefill (UCP)
+---
 
-The first stage is `adapter.build_ucp_batch(image, query)`.
+## 4. Stage 0: Unified Counterfactual Prefill (UCP)
 
-This is the most important preprocessing step because it creates the three-view comparison that GLIMPSE relies on.
+The first pipeline stage is `adapter.build_ucp_batch(image, query)` — the most critical preprocessing step, as it constructs the three-view comparison underlying the entire GLIMPSE approach.
+
 For LLaVA-1.5, the adapter builds three aligned variants:
 
-- full input: image + question
-- no-image input: question only
-- no-query input: image + empty assistant prefix
+| Variant | Composition |
+|---|---|
+| Full input | image + question |
+| No-image input | question only |
+| No-query input | image + empty assistant prefix |
 
-Why this exists:
+**Rationale:**
 
-- full vs no-image shows which heads depend on the visual content
-- full vs no-query shows which attention patterns are specifically driven by the question text
-- combining these views lets the pipeline separate visual evidence from language priors
+- Full vs. no-image reveals which attention heads depend on visual content
+- Full vs. no-query reveals which attention patterns are driven specifically by the question text
+- Combining both views separates visual evidence from language priors
 
-The adapter pads the token sequences to a common length and stacks them into one batch.
-The visual token positions are kept aligned so the model’s attention maps can be compared across variants.
+Token sequences are padded to a common length and stacked into a single batch, with visual token positions kept aligned so attention maps remain comparable across variants.
 
-The batch is then sent through the model once inside `HeadCapture`.
-This single forward pass is used to extract all the signals needed by later stages.
+This batch is passed through the model in **one forward pass** inside `HeadCapture`, from which all downstream signals are extracted.
 
-5. Capturing internal signals
+---
 
-`glimpse/hooks.py` installs forward hooks on the model’s attention modules.
+## 5. Capturing Internal Signals
 
-Two mechanisms matter here:
+`glimpse/hooks.py` installs forward hooks on the model's attention modules. Two mechanisms are central:
 
-- `HeadCapture` records per-layer head outputs and attention weights from the UCP forward pass
-- `HeadScaler` later reinforces selected heads during decoding
+- **`HeadCapture`** — records per-layer head outputs and attention weights from the UCP forward pass; this is what makes the pipeline explainable, exposing model internals normally hidden from view
+- **`HeadScaler`** — reinforces selected heads during decoding, acting as the control mechanism applied after routing
 
-`HeadCapture` is what makes the pipeline explainable: it exposes model internals that are normally hidden.
-`HeadScaler` is the control mechanism used after routing, when the pipeline decides which heads deserve extra emphasis.
+Captured tensors are then processed by `glimpse/metrics.py`.
 
-The captured tensors are then processed by `glimpse/metrics.py`.
+---
 
-6. Stage 0 metrics: turning activations into evidence signals
+## 6. Stage 0 Metrics: Turning Activations into Evidence Signals
 
-The captured UCP batch is converted into four main signal types:
+The captured UCP batch is converted into four signal types:
 
-- VHD: head-level divergence between full and no-image variants
-- TA: activation magnitude on the no-image variant
-- pruned VHD: VHD after removing outlier heads
-- VAQ: contrastive attention between full and no-query variants
+| Signal | Definition | Answers |
+|---|---|---|
+| **VHD** | Head-level divergence between full and no-image variants | Which heads change when the image is removed? |
+| **TA** | Activation magnitude on the no-image variant | Are some heads spuriously large without visual input? |
+| **Pruned VHD** | VHD with outlier heads removed | Which divergence reflects genuine vision dependence rather than noise? |
+| **VAQ** | Contrastive attention between full and no-query variants | Which layers/heads focus on visually relevant patch positions? |
 
-What each one means:
+All four signals derive from the same UCP forward pass, keeping the pipeline efficient and internally consistent.
 
-- VHD answers: which heads change when the image is removed?
-- TA answers: are some heads spuriously large even without visual input?
-- pruned VHD removes heads whose divergence looks like noise rather than useful vision dependence
-- VAQ answers: which layers and heads focus on visually relevant patch positions?
+---
 
-These values are all derived from the same UCP forward pass, which keeps the pipeline efficient and consistent.
+## 7. Stage 1: Localization
 
-7. Stage 1: localization
-
-The next step is to turn the attention signals into a spatial crop.
-This is done with `glimpse/localize.py` using the VAQ and pruned VHD outputs.
+`glimpse/localize.py` converts attention signals into a spatial crop using the VAQ and pruned VHD outputs.
 
 The localization stage computes:
 
-- HGCA: a head-gated contrastive attention map
-- crop box: a bounding box centered on the HGCA mass
-- crop mass: how much HGCA mass falls inside the crop
+- **HGCA** — a head-gated contrastive attention map
+- **Crop box** — a bounding box centered on the HGCA mass
+- **Crop mass** — the fraction of HGCA mass falling inside the crop
 
-Why this exists:
+**Rationale:**
 
-- if evidence is concentrated, a crop can focus the model on the important region
-- if evidence is scattered, the crop may matter less
-- the crop mass becomes a router feature that tells the system whether cropping is worthwhile
+- Concentrated evidence favors a focused crop
+- Scattered evidence makes cropping less impactful
+- Crop mass becomes a router feature indicating whether cropping is worthwhile
 
-The localization stage returns a `CropResult`:
+The stage returns a `CropResult` containing:
 
-- `image_pos`: the positive cropped image
-- `image_neg`: an optional masked negative crop, used only in HARD mode
-- `box`: crop coordinates in original-image space
-- `crop_mass`: the scalar evidence-mass feature for routing
+- `image_pos` — the positive cropped image
+- `image_neg` — an optional masked negative crop (HARD mode only)
+- `box` — crop coordinates in original-image space
+- `crop_mass` — the scalar evidence-mass feature used for routing
 
-This stage bridges attention maps and actual image-space decisions.
+---
 
-8. Stage 2: routing
+## 8. Stage 2: Routing
 
-`glimpse/router.py` turns the UCP-derived signals into route features and then a route decision.
+`glimpse/router.py` converts UCP-derived signals into route features, then into a route decision.
 
-The router features are:
+**Router features:**
 
-- `d1_depth`: normalized depth of the best VAQ layer
-- `d2_entropy`: entropy of the VAQ profile across layers
-- `d3_tvhd`: first-token T-VHD
-- `d4_crop_mass`: HGCA crop mass
+| Feature | Description |
+|---|---|
+| `d1_depth` | Normalized depth of the best VAQ layer |
+| `d2_entropy` | Entropy of the VAQ profile across layers |
+| `d3_tvhd` | First-token T-VHD |
+| `d4_crop_mass` | HGCA crop mass |
 
-Interpretation:
+**Interpretation:**
 
-- a late best layer or high entropy suggests the model’s visual focus is diffuse or harder to localize
-- low T-VHD suggests the model may be leaning too much on language priors
-- low crop mass suggests the evidence is spread out and a crop may help
+- A late best layer or high entropy suggests diffuse or hard-to-localize visual focus
+- Low T-VHD suggests over-reliance on language priors
+- Low crop mass suggests spread-out evidence that a crop may help concentrate
 
-`decide(...)` converts those features into one of three routes:
+`decide(...)` maps these features to one of three routes:
 
-- `Route.EASY`: decode directly, no crop and no negative stream
-- `Route.MEDIUM`: crop first, then re-prefill on the crop
-- `Route.HARD`: crop, optionally mask evidence, and use ETV decoding with a negative stream
+| Route | Behavior |
+|---|---|
+| `Route.EASY` | Decode directly — no crop, no negative stream |
+| `Route.MEDIUM` | Crop first, then re-prefill on the crop |
+| `Route.HARD` | Crop, optionally mask evidence, decode with ETV and a negative stream |
 
-The route is not a label prediction. It is a difficulty-control decision that chooses how expensive and how cautious the next decoding step should be.
+The route is a **difficulty-control decision**, not a label prediction — it governs how expensive and cautious the subsequent decoding step should be.
 
-9. Stage 3/4: decoding and answer generation
+---
 
-`glimpse/decoding.py` is where the answer text is generated.
+## 9. Stage 3/4: Decoding and Answer Generation
 
-The decoding logic keeps VHR reinforcement active during generation.
-Depending on the route:
+`glimpse/decoding.py` generates the final answer text, keeping VHR reinforcement active throughout generation.
 
-- EASY: the model decodes on the original image
-- MEDIUM: the model decodes on the localized crop
-- HARD: the model decodes on the localized crop and also uses a negative counterfactual stream
+**Decoding behavior by route:**
 
-ETV works as follows:
+- **EASY** — decode on the original image
+- **MEDIUM** — decode on the localized crop
+- **HARD** — decode on the localized crop, combined with a negative counterfactual stream
 
-- the positive stream generates tokens normally
-- the negative stream is only advanced when the T-VHD proxy falls below the threshold
-- when triggered, the negative stream catches up lazily and its logits are combined with the positive logits
+**ETV (Evidence-Triggered Verification) mechanism:**
 
-Why this design matters:
+- The positive stream generates tokens normally
+- The negative stream advances only when the T-VHD proxy falls below threshold
+- When triggered, the negative stream catches up lazily and its logits are combined with the positive stream's logits
 
-- it avoids paying the cost of always-on counterfactual decoding
-- it keeps the negative stream exact when it is actually needed
-- it lets the model spend extra compute only on tokens that look language-prior driven
+**Design rationale:**
 
-The final output of decoding is plain text, not a label yet.
-That text is later converted into yes/no for POPE scoring.
+- Avoids the cost of always-on counterfactual decoding
+- Keeps the negative stream exact only when actually needed
+- Concentrates extra compute on tokens that appear language-prior driven
 
-10. What `GlimpsePipeline.run(...)` returns
+The output of this stage is plain decoded text — not yet a label. That text is later converted into a yes/no prediction for POPE scoring.
 
-`GlimpsePipeline.run(...)` returns a `GlimpseOutput` dataclass containing:
+---
 
-- `text`: the decoded answer string
-- `route`: EASY, MEDIUM, or HARD
-- `best_layer`: the layer with maximum VAQ
-- `tvhd_first`: the first-token T-VHD score
-- `etv_stats`: counters describing how often the negative stream was triggered
-- `crop_box`: crop coordinates when localization was used
+## 10. What `GlimpsePipeline.run(...)` Returns
 
-This object is the handoff point between inference and benchmark scoring.
-It contains both the visible answer and the internal diagnostics that explain how the answer was produced.
+The pipeline returns a `GlimpseOutput` dataclass containing:
 
-11. Benchmark scoring in POPE
+| Field | Description |
+|---|---|
+| `text` | The decoded answer string |
+| `route` | EASY, MEDIUM, or HARD |
+| `best_layer` | The layer with maximum VAQ |
+| `tvhd_first` | The first-token T-VHD score |
+| `etv_stats` | Counters describing negative-stream trigger frequency |
+| `crop_box` | Crop coordinates, when localization was used |
 
-Back in `eval/pope.py`, the answer text is converted into a binary prediction with `parse_answer(...)`.
+This object is the handoff point between inference and benchmark scoring, containing both the visible answer and the internal diagnostics explaining how it was produced.
 
-The parser is intentionally simple:
+---
 
-- trim whitespace
-- lowercase the text
-- return `yes` if it starts with `yes` or contains ` yes` early in the string
-- otherwise return `no`
+## 11. Benchmark Scoring in POPE
 
-The benchmark then compares predicted labels to gold labels and computes:
+Back in `eval/pope.py`, the answer text is converted to a binary prediction via `parse_answer(...)`, which:
 
-- accuracy
-- precision
-- recall
-- F1
-- yes_ratio
+1. Trims whitespace
+2. Lowercases the text
+3. Returns `yes` if the text starts with "yes" or contains " yes" early in the string
+4. Otherwise returns `no`
 
-How to read them:
+Predicted labels are compared against gold labels to compute:
 
-- accuracy: overall correctness
-- precision: when the model says yes, how often it is right
-- recall: among true yes examples, how many the model found
-- F1: balance of precision and recall
-- yes_ratio: how often the model answers yes at all
+| Metric | Meaning |
+|---|---|
+| **Accuracy** | Overall correctness |
+| **Precision** | When the model says yes, how often it is correct |
+| **Recall** | Among true-yes examples, how many the model identified |
+| **F1** | Balance of precision and recall |
+| **yes_ratio** | Frequency with which the model answers yes |
 
-In POPE, a high yes_ratio often means the model is overly willing to answer yes, which can improve recall but hurt precision.
+> A high `yes_ratio` often indicates the model is overly willing to answer yes — this can improve recall at the expense of precision.
 
-12. Efficiency scoring
+---
 
-`eval/profiler.py` records timing and route statistics for each example.
+## 12. Efficiency Scoring
 
-It reports:
+`eval/profiler.py` records timing and route statistics per example, reporting:
 
-- `n_samples`: number of processed examples
-- `ms_per_sample_mean`: average wall-clock time per sample
-- `ms_per_sample_p50`: median sample time
-- `ms_per_token`: average latency divided by generated tokens
-- `route_mix`: how many samples were EASY/MEDIUM/HARD
-- `etv_utilization_mean`: average fraction of tokens that triggered the negative stream
-- `peak_vram_gb`: peak GPU memory usage if CUDA is available
+| Metric | Meaning |
+|---|---|
+| `n_samples` | Number of processed examples |
+| `ms_per_sample_mean` | Average wall-clock time per sample |
+| `ms_per_sample_p50` | Median sample time |
+| `ms_per_token` | Average latency divided by generated tokens |
+| `route_mix` | Distribution of EASY/MEDIUM/HARD routes |
+| `etv_utilization_mean` | Average fraction of tokens triggering the negative stream |
+| `peak_vram_gb` | Peak GPU memory usage (`null` on CPU-only runs) |
 
-Interpretation:
+**Interpretation:**
 
-- `ms_per_sample_mean` and `ms_per_token` tell you how slow the pipeline is
-- `route_mix` tells you how the router distributed the workload
-- `etv_utilization_mean` tells you how often the expensive negative stream was actually needed
-- `peak_vram_gb` is `null` on CPU-only runs
+- `ms_per_sample_mean` and `ms_per_token` indicate overall pipeline speed
+- `route_mix` shows how the router distributed workload across examples
+- `etv_utilization_mean` shows how often the expensive negative stream was actually needed
+- `peak_vram_gb` is only meaningful on CUDA runs
 
-13. How to read your current run
+---
 
-In the run you showed:
+## 13. How to Read a Sample Run
 
-- all 100 samples were routed to `medium`
-- accuracy was 0.8
-- precision was lower than recall, so the model said yes fairly often
-- the run was very slow because it used CPU, not CUDA
+Example run summary:
 
-That output is the combined result of the benchmark wrapper, the GLIMPSE pipeline, and the profiler.
+- All 100 samples were routed to `MEDIUM`
+- Accuracy: **0.8**
+- Precision was lower than recall, indicating the model answered "yes" fairly often
+- Runtime was slow because the run used CPU rather than CUDA
 
-14. End-to-end mental model
+This output reflects the combined result of the benchmark wrapper, the GLIMPSE pipeline, and the profiler.
 
-If you want to trace a single example from start to finish, the path is:
+---
 
-1. POPE JSON line is read.
+## 14. End-to-End Mental Model
+
+Tracing a single example from start to finish:
+
+1. A POPE JSON line is read.
 2. The image is loaded from disk.
 3. The query text is extracted.
 4. The adapter builds the UCP batch.
@@ -288,11 +321,11 @@ If you want to trace a single example from start to finish, the path is:
 12. The gold label is compared.
 13. The profiler records timing and route information.
 
-That is the working mechanism of GLIMPSE in this repository.
+---
 
-15. Diagram-style version
+## 15. Diagram-Style Version
 
-Flow chart:
+### Flowchart
 
 ```mermaid
 flowchart TD
@@ -309,10 +342,10 @@ flowchart TD
 	I --> L[Profiler records latency and route]
 ```
 
-Stage-by-stage inputs and outputs:
+### Stage-by-Stage Reference Table
 
 | Stage | Input | Output | Purpose |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | Data load | POPE JSON line + image filename | PIL image + text query + gold label | Retrieve one benchmark example from disk |
 | UCP build | Image + query | Batch of full / no-image / no-query variants | Create counterfactual views for comparison |
 | Head capture | UCP batch | Per-layer head outputs and attention maps | Expose internal model signals |
@@ -324,7 +357,9 @@ Stage-by-stage inputs and outputs:
 | Scoring | yes/no prediction + gold label | Accuracy, precision, recall, F1, yes_ratio | Measure answer quality |
 | Profiling | Route + token count + wall-clock time | Latency stats + route mix | Measure runtime cost |
 
-Compact summary:
+---
+
+### Summary
 
 - The benchmark loads one image-question pair.
 - UCP compares the same example under three counterfactual views.
