@@ -28,9 +28,12 @@ class RouterThresholds:
     """Percentile-based thresholds; values below are LLaVA-1.5 placeholders
     to be replaced by calibrate_router.py output."""
     d1_late: float = 0.55       # l*/L above this counts as "late peak"
-    d2_flat: float = 0.80       # normalized entropy above this = diffuse
+    d2_flat: float = 0.95       # normalized entropy above this = diffuse
     d3_low: float = 0.0         # 20th-percentile T-VHD from calibration
-    d4_low: float = 0.35        # crop-mass below this = dispersed evidence
+    d4_min: float = 0.45        # crop-mass required to TRUST the map for
+                                # cropping; below this the localization is
+                                # too dispersed and cropping risks cutting
+                                # out the queried content
 
 
 @dataclass
@@ -56,12 +59,16 @@ def features(vaq_per_layer: torch.Tensor, best_layer: int, tvhd: float,
 
 
 def decide(f: RouterFeatures, th: RouterThresholds) -> Route:
+    """Escalate only when BOTH the query looks hard (late/flat grounding or
+    prior risk) AND the localization map is trustworthy enough to act on.
+    Untrustworthy map + hard query -> stay EASY (VHR still active) rather
+    than risk cropping out the evidence."""
     late_or_flat = (f.d1_depth > th.d1_late) or (f.d2_entropy > th.d2_flat)
     prior_risk = f.d3_tvhd < th.d3_low
-    crop_useful = f.d4_crop_mass < th.d4_low
+    map_trusted = f.d4_crop_mass >= th.d4_min
 
-    if prior_risk and late_or_flat:
+    if prior_risk and late_or_flat and map_trusted:
         return Route.HARD
-    if late_or_flat or crop_useful:
+    if late_or_flat and map_trusted:
         return Route.MEDIUM
     return Route.EASY

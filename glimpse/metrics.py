@@ -26,7 +26,7 @@ def vhd_scores(head_outputs: dict[int, torch.Tensor]) -> torch.Tensor:
     layers = sorted(head_outputs)
     out = []
     for l in layers:
-        h = head_outputs[l]  # (3, 1, H, D)
+        h = head_outputs[l].float().nan_to_num(0.0)  # (3, 1, H, D)
         d = torch.linalg.vector_norm(h[FULL, 0] - h[NO_IMAGE, 0], dim=-1)  # (H,)
         out.append(d)
     return torch.stack(out)  # (L, H)
@@ -36,7 +36,8 @@ def ta_scores(head_outputs: dict[int, torch.Tensor]) -> torch.Tensor:
     """TA_{l,i} = || A_{l,i}(no_image) ||_2 -- used for outlier pruning (VHR Eq. 6)."""
     layers = sorted(head_outputs)
     return torch.stack([
-        torch.linalg.vector_norm(head_outputs[l][NO_IMAGE, 0], dim=-1)
+        torch.linalg.vector_norm(
+            head_outputs[l][NO_IMAGE, 0].float().nan_to_num(0.0), dim=-1)
         for l in layers
     ])
 
@@ -77,20 +78,34 @@ class VaqResult:
     top_heads: torch.Tensor              # (L, K) indices of top-K heads per layer
 
 
-def vaq_scores(attn_maps: dict[int, torch.Tensor], visual_slice: slice,
+def vaq_scores(attn_maps: dict[int, torch.Tensor],
+               visual_slice: slice | tuple[slice, slice],
                k_head: int = 8) -> VaqResult:
     """Contrastive attention and VAQ (LASER Eqs. 3-5), computed at t=1.
 
     attn_maps[l]: (3, n_heads, T_q, T_kv) UCP-batch attention of last query
-    position over all keys.  visual_slice selects visual-token key positions
-    (positions must align between FULL and NO_QUERY variants; the model
-    adapter guarantees this by keeping the image prefix identical).
+    position over all keys.  visual_slice selects visual-token key positions;
+    pass a (slice_full, slice_no_query) tuple when the two variants' visual
+    spans sit at different absolute positions (left-padding shifts them).
     """
+    if not attn_maps:
+        raise RuntimeError(
+            "no attention maps captured during the UCP forward; ensure the "
+            "model runs with output_attentions=True and "
+            "attn_implementation='eager'")
+    if isinstance(visual_slice, tuple):
+        sl_full, sl_noq = visual_slice
+    else:
+        sl_full = sl_noq = visual_slice
     layers = sorted(attn_maps)
     maps, scores, tops = [], [], []
     for l in layers:
-        a = attn_maps[l][:, :, -1, visual_slice]          # (3, H, P)
-        con = torch.relu(a[FULL] - a[NO_QUERY])           # (H, P)  Eq. 3
+        # float32 + nan_to_num: left-padded UCP variants yield NaN rows in
+        # fp16 eager attention; guard before any reduction
+        row = attn_maps[l][:, :, -1, :].float().nan_to_num(0.0)  # (3, H, T_kv)
+        a_full = row[FULL, :, sl_full]                    # (H, P)
+        a_noq = row[NO_QUERY, :, sl_noq]                  # (H, P)
+        con = torch.relu(a_full - a_noq)                  # (H, P)  Eq. 3
         s = torch.linalg.vector_norm(con, dim=-1)         # (H,)    Eq. 4
         k = min(k_head, s.shape[0])
         top = s.topk(k).indices
@@ -116,6 +131,9 @@ def hgca_map(vaq: VaqResult, vhd_pruned: torch.Tensor, layer: int) -> torch.Tens
     keep = top[vhr_gate[top]]
     if keep.numel() == 0:
         keep = top
-    m = vaq.contrastive_maps[layer][keep].mean(dim=0)  # (P,)
+    m = vaq.contrastive_maps[layer][keep].mean(dim=0).nan_to_num(0.0)  # (P,)
     total = m.sum()
-    return m / total if total > 0 else m
+    if total > 0:
+        return m / total
+    # degenerate map (no query-driven attention): uniform fallback
+    return torch.full_like(m, 1.0 / max(m.numel(), 1))

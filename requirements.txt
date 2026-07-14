@@ -6,5 +6,6 @@ numpy
 sentencepiece
 protobuf
 # eval extras
+datasets       # A-OKVQA (HF hub)
 pycocotools    # CHAIR
 nltk           # CHAIR object matching

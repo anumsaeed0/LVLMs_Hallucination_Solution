@@ -1,0 +1,469 @@
+(base) C:\Users\Administrator>D:
+
+(base) D:\>cd Anum
+
+(base) D:\Anum>conda list envs
+# packages in environment at C:\ProgramData\anaconda3:
+#
+# Name                     Version          Build            Channel
+
+(base) D:\Anum>conda list env
+# packages in environment at C:\ProgramData\anaconda3:
+#
+# Name                      Version          Build            Channel
+aext-environments-server    4.20.0           py313haa95532_0
+pylint-venv                 3.0.3            py313haa95532_0
+python-dotenv               1.1.0            py313haa95532_0
+
+(base) D:\Anum>conda envs list
+usage: conda-script.py [-h] [-v] [--no-plugins] [-V] COMMAND ...
+conda-script.py: error: argument COMMAND: invalid choice: 'envs' (choose from activate, build, clean, commands, compare, config, content-trust, convert, create, deactivate, debug, develop, doctor, env, export, index, info, init, inspect, install, list, metapackage, notices, pack, package, remove, rename, render, repo, repoquery, run, search, server, skeleton, token, tos, uninstall, update, upgrade)
+
+(base) D:\Anum>conda env list
+
+# conda environments:
+#
+base                 * C:\ProgramData\anaconda3
+ASR_Testing            C:\Users\anaum_ssl\.conda\envs\ASR_Testing
+Doc                    C:\Users\anaum_ssl\.conda\envs\Doc
+FaceAPI                C:\Users\anaum_ssl\.conda\envs\FaceAPI
+MARINE                 C:\Users\anaum_ssl\.conda\envs\MARINE
+MA_SAM                 C:\Users\anaum_ssl\.conda\envs\MA_SAM
+Ollama_chat            C:\Users\anaum_ssl\.conda\envs\Ollama_chat
+VHR                    C:\Users\anaum_ssl\.conda\envs\VHR
+VHR-qwen               C:\Users\anaum_ssl\.conda\envs\VHR-qwen
+VHR_Test               C:\Users\anaum_ssl\.conda\envs\VHR_Test
+VHR_instructblip       C:\Users\anaum_ssl\.conda\envs\VHR_instructblip
+VLMs                   C:\Users\anaum_ssl\.conda\envs\VLMs
+VisionAI               C:\Users\anaum_ssl\.conda\envs\VisionAI
+openwebui              C:\Users\anaum_ssl\.conda\envs\openwebui
+pandas_env             C:\Users\anaum_ssl\.conda\envs\pandas_env
+pytorch                C:\Users\anaum_ssl\.conda\envs\pytorch
+ruvnet                 C:\Users\anaum_ssl\.conda\envs\ruvnet
+                       d:\Anum\VLMs\VHR-main\.conda
+
+
+(base) D:\Anum>conda activate VHR_Test
+
+(VHR_Test) D:\Anum>python --version
+Python 3.10.20
+
+(VHR_Test) D:\Anum>cd VLMs/LVLMs_Hallucination
+
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>pip install -r requirements.txt
+Requirement already satisfied: torch>=2.1 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 1)) (2.11.0)
+Requirement already satisfied: transformers>=4.44 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 2)) (4.45.0)
+Requirement already satisfied: accelerate in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 3)) (0.26.0)
+Requirement already satisfied: pillow in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 4)) (10.2.0)
+Requirement already satisfied: numpy in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 5)) (1.26.3)
+Requirement already satisfied: sentencepiece in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 6)) (0.1.99)
+Requirement already satisfied: protobuf in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 7)) (3.20.0)
+Requirement already satisfied: pycocotools in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 9)) (2.0.11)
+Requirement already satisfied: nltk in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from -r requirements.txt (line 10)) (3.5)
+Requirement already satisfied: filelock in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from torch>=2.1->-r requirements.txt (line 1)) (3.20.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from torch>=2.1->-r requirements.txt (line 1)) (4.15.0)
+Requirement already satisfied: setuptools<82 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from torch>=2.1->-r requirements.txt (line 1)) (80.10.2)
+Requirement already satisfied: sympy>=1.13.3 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from torch>=2.1->-r requirements.txt (line 1)) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from torch>=2.1->-r requirements.txt (line 1)) (3.4.2)
+Requirement already satisfied: jinja2 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from torch>=2.1->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from torch>=2.1->-r requirements.txt (line 1)) (2026.2.0)
+Requirement already satisfied: huggingface-hub<1.0,>=0.23.2 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from transformers>=4.44->-r requirements.txt (line 2)) (0.36.2)
+Requirement already satisfied: packaging>=20.0 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from transformers>=4.44->-r requirements.txt (line 2)) (25.0)
+Requirement already satisfied: pyyaml>=5.1 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from transformers>=4.44->-r requirements.txt (line 2)) (6.0.3)
+Requirement already satisfied: regex!=2019.12.17 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from transformers>=4.44->-r requirements.txt (line 2)) (2026.2.28)
+Requirement already satisfied: requests in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from transformers>=4.44->-r requirements.txt (line 2)) (2.28.1)
+Requirement already satisfied: tokenizers<0.21,>=0.20 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from transformers>=4.44->-r requirements.txt (line 2)) (0.20.3)
+Requirement already satisfied: safetensors>=0.4.1 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from transformers>=4.44->-r requirements.txt (line 2)) (0.7.0)
+Requirement already satisfied: tqdm>=4.27 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from transformers>=4.44->-r requirements.txt (line 2)) (4.67.3)
+Requirement already satisfied: psutil in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from accelerate->-r requirements.txt (line 3)) (7.2.2)
+Requirement already satisfied: click in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from nltk->-r requirements.txt (line 10)) (8.3.1)
+Requirement already satisfied: joblib in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from nltk->-r requirements.txt (line 10)) (1.5.3)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from sympy>=1.13.3->torch>=2.1->-r requirements.txt (line 1)) (1.3.0)
+Requirement already satisfied: colorama in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from tqdm>=4.27->transformers>=4.44->-r requirements.txt (line 2)) (0.4.6)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from jinja2->torch>=2.1->-r requirements.txt (line 1)) (3.0.2)
+Requirement already satisfied: charset-normalizer<3,>=2 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from requests->transformers>=4.44->-r requirements.txt (line 2)) (2.1.1)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from requests->transformers>=4.44->-r requirements.txt (line 2)) (3.4)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from requests->transformers>=4.44->-r requirements.txt (line 2)) (1.26.13)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\anaum_ssl\.conda\envs\vhr_test\lib\site-packages (from requests->transformers>=4.44->-r requirements.txt (line 2)) (2022.12.7)
+
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_adversarial.json --image-dir ../VHR_original/data/coco/val2014 --limit 100 --out results/pope_adv.json
+W0709 09:44:41.292000 72036 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 3/3 [00:00<00:00,  5.90it/s]
+Traceback (most recent call last):
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 57, in <module>
+    main()
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 40, in main
+    pipeline = GlimpsePipeline(build_adapter(args.model),
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 23, in build_adapter
+    return Llava15Adapter()
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\models\llava.py", line 23, in __init__
+    output_attentions=True).to(device)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\modeling_utils.py", line 2952, in to
+    return super().to(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1384, in to
+    return self._apply(convert)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 934, in _apply
+    module._apply(fn)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 934, in _apply
+    module._apply(fn)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 934, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 965, in _apply
+    param_applied = fn(param)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1370, in convert
+    return t.to(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\cuda\__init__.py", line 471, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_adversarial.json --image-dir ../VHR_original/data/coco/val2014 --limit 100 --out results/pope_adv.json
+W0709 09:47:03.705000 22904 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 3/3 [00:29<00:00,  9.95s/it]
+chat_template.json: 100%|█████████████████████████████████████████████████████████████████████| 701/701 [00:00<?, ?B/s]
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\huggingface_hub\file_download.py:143: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\anaum_ssl\.cache\huggingface\hub\models--llava-hf--llava-1.5-7b-hf. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+Traceback (most recent call last):
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 57, in <module>
+    main()
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 46, in main
+    m = pope.run(pipeline, args.pope_json, args.image_dir,
+  File "D:\Anum\VLMs\LVLMs_Hallucination\eval\pope.py", line 52, in run
+    img = Image.open(os.path.join(image_dir, item["image"])).convert("RGB")
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\PIL\Image.py", line 3247, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '../VHR_original/data/coco/val2014\\COCO_train2014_000000309031.jpg'
+
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_adversarial.json --image-dir ../VHR_original/data/coco/val2014 --limit 100 --out results/pope_adv.json
+W0709 09:48:55.051000 60268 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 3/3 [00:10<00:00,  3.65s/it]
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+Traceback (most recent call last):
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 57, in <module>
+    main()
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 46, in main
+    m = pope.run(pipeline, args.pope_json, args.image_dir,
+  File "D:\Anum\VLMs\LVLMs_Hallucination\eval\pope.py", line 55, in run
+    out = pipeline.run(img, item["text"])
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\pipeline.py", line 75, in run
+    ucp = a.build_ucp_batch(image, query)
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\models\llava.py", line 67, in build_ucp_batch
+    enc = self.processor(text=texts, images=[image, None, image],
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llava\processing_llava.py", line 126, in __call__
+    images, text = _validate_images_text_input_order(images, text)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\processing_utils.py", line 1132, in _validate_images_text_input_order
+    raise ValueError("Invalid input type. Check that `images` and/or `text` are valid inputs.")
+ValueError: Invalid input type. Check that `images` and/or `text` are valid inputs.
+
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_adversarial.json --image-dir ../VHR_original/data/coco/val2014 --limit 100 --out results/pope_adv.json
+W0709 09:51:41.333000 74912 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  3.00s/it]
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+We detected that you are passing `past_key_values` as a tuple of tuples. This is deprecated and will be removed in v4.47. Please convert your cache or use an appropriate `Cache` class (https://huggingface.co/docs/transformers/kv_cache#legacy-cache-format)
+{
+  "metrics": {
+    "accuracy": 0.8,
+    "precision": 0.734375,
+    "recall": 0.94,
+    "f1": 0.8245614035087719,
+    "yes_ratio": 0.64
+  },
+  "efficiency": {
+    "n_samples": 100,
+    "ms_per_sample_mean": 53870.7706670044,
+    "ms_per_sample_p50": 58080.130899790674,
+    "ms_per_token": 3577.07640551158,
+    "route_mix": {
+      "medium": 100
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": null
+  }
+}
+
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_popular.json --image-dir ../VHR_original/data/coco/val2014 --limit 100 --out results/pope_adv.json
+W0709 13:23:26.093000 55512 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.90s/it]
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+Traceback (most recent call last):
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 57, in <module>
+    main()
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 46, in main
+    m = pope.run(pipeline, args.pope_json, args.image_dir,
+  File "D:\Anum\VLMs\LVLMs_Hallucination\eval\pope.py", line 55, in run
+    out = pipeline.run(img, item["text"])
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\pipeline.py", line 78, in run
+    a.model(**ucp)  # one batched forward, three variants
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llava\modeling_llava.py", line 453, in forward
+    image_outputs = self.vision_tower(pixel_values, output_hidden_states=True)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\clip\modeling_clip.py", line 1116, in forward
+    return self.vision_model(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\clip\modeling_clip.py", line 1043, in forward
+    encoder_outputs = self.encoder(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\clip\modeling_clip.py", line 824, in forward
+    layer_outputs = encoder_layer(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\clip\modeling_clip.py", line 568, in forward
+    hidden_states = self.layer_norm2(hidden_states)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1955, in __getattr__
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+KeyboardInterrupt
+^C
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_popular.json --image-dir ../VHR_original/data/coco/val2014 --limit 100 --out results/pope_popular.json
+W0709 13:23:56.870000 43696 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 3/3 [00:07<00:00,  2.48s/it]
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+We detected that you are passing `past_key_values` as a tuple of tuples. This is deprecated and will be removed in v4.47. Please convert your cache or use an appropriate `Cache` class (https://huggingface.co/docs/transformers/kv_cache#legacy-cache-format)
+{
+  "metrics": {
+    "accuracy": 0.9,
+    "precision": 0.8703703703703703,
+    "recall": 0.94,
+    "f1": 0.9038461538461539,
+    "yes_ratio": 0.54
+  },
+  "efficiency": {
+    "n_samples": 100,
+    "ms_per_sample_mean": 39248.09463097714,
+    "ms_per_sample_p50": 38473.46800006926,
+    "ms_per_token": 2454.540001937282,
+    "route_mix": {
+      "medium": 100
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": null
+  }
+}
+
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_random.json --image-dir ../VHR_original/data/coco/val2014 --limit 100 --out results/pope_rand.json
+W0709 14:33:44.356000 52320 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 3/3 [00:06<00:00,  2.33s/it]
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+We detected that you are passing `past_key_values` as a tuple of tuples. This is deprecated and will be removed in v4.47. Please convert your cache or use an appropriate `Cache` class (https://huggingface.co/docs/transformers/kv_cache#legacy-cache-format)
+{
+  "metrics": {
+    "accuracy": 0.95,
+    "precision": 0.9591836734693877,
+    "recall": 0.94,
+    "f1": 0.9494949494949495,
+    "yes_ratio": 0.49
+  },
+  "efficiency": {
+    "n_samples": 100,
+    "ms_per_sample_mean": 50498.931767027825,
+    "ms_per_sample_p50": 49886.22079975903,
+    "ms_per_token": 3113.374338287782,
+    "route_mix": {
+      "medium": 100
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": null
+  }
+}
+
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_adversarial.json --image-dir ../VHR_original/data/coco/val2014 --out results/pope_adv.json
+W0710 09:30:50.208000 58176 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:05<00:00,  1.77s/it]
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+We detected that you are passing `past_key_values` as a tuple of tuples. This is deprecated and will be removed in v4.47. Please convert your cache or use an appropriate `Cache` class (https://huggingface.co/docs/transformers/kv_cache#legacy-cache-format)
+Traceback (most recent call last):
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 96, in <module>
+    main()
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 72, in main
+    m = pope.run(pipeline, args.pope_json, args.image_dir,
+  File "D:\Anum\VLMs\LVLMs_Hallucination\eval\pope.py", line 55, in run
+    if profiler is not None:
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\pipeline.py", line 82, in run
+    a.model(**ucp)  # one batched forward, three variants
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llava\modeling_llava.py", line 453, in forward
+    image_outputs = self.vision_tower(pixel_values, output_hidden_states=True)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\clip\modeling_clip.py", line 1116, in forward
+    return self.vision_model(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\clip\modeling_clip.py", line 1043, in forward
+    encoder_outputs = self.encoder(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\clip\modeling_clip.py", line 824, in forward
+    layer_outputs = encoder_layer(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\clip\modeling_clip.py", line 568, in forward
+    hidden_states = self.layer_norm2(hidden_states)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1955, in __getattr__
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+KeyboardInterrupt
+^C
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_adversarial.json --image-dir ../VHR_original/data/coco/val2014 --out results/pope_adv.json
+W0710 09:38:31.259000 40892 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:05<00:00,  1.70s/it]
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+POPE:   0%|                                                                                                                                                                             | 0/3000 [00:00<?, ?q/s]Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+We detected that you are passing `past_key_values` as a tuple of tuples. This is deprecated and will be removed in v4.47. Please convert your cache or use an appropriate `Cache` class (https://huggingface.co/docs/transformers/kv_cache#legacy-cache-format)
+POPE:   0%|▏                                                                                                                                                                 | 4/3000 [01:31<18:57:07, 22.77s/q]
+Traceback (most recent call last):
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 96, in <module>
+    main()
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 72, in main
+    m = pope.run(pipeline, args.pope_json, args.image_dir,
+  File "D:\Anum\VLMs\LVLMs_Hallucination\eval\pope.py", line 57, in run
+    out = pipeline.run(img, item["text"])
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\pipeline.py", line 117, in run
+    text, stats = etv_generate(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\decoding.py", line 88, in etv_generate
+    out = model(**pos_inputs, use_cache=True)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llava\modeling_llava.py", line 520, in forward
+    outputs = self.language_model(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llama\modeling_llama.py", line 1189, in forward
+    outputs = self.model(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llama\modeling_llama.py", line 1000, in forward
+    layer_outputs = decoder_layer(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+KeyboardInterrupt
+^C
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>python scripts/run_eval.py --model llava15 --bench pope --pope-json data/pope/coco_pope_adversarial.json --image-dir ../VHR_original/data/coco/val2014 --out results/pope_adv.json
+W0710 09:41:52.460000 41804 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\generation\configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_attentions` is. When `return_dict_in_generate` is not `True`, `output_attentions` is ignored.
+  warnings.warn(
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:05<00:00,  1.70s/it]
+Some kwargs in processor config are unused and will not have any effect: num_additional_image_tokens.
+POPE:   0%|                                                                                                                                                                             | 0/3000 [00:00<?, ?q/s]Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+We detected that you are passing `past_key_values` as a tuple of tuples. This is deprecated and will be removed in v4.47. Please convert your cache or use an appropriate `Cache` class (https://huggingface.co/docs/transformers/kv_cache#legacy-cache-format)
+POPE:   2%|██▋                                                                                                                                                              | 51/3000 [31:31<30:23:01, 37.09s/q]
+Traceback (most recent call last):
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 104, in <module>
+
+  File "D:\Anum\VLMs\LVLMs_Hallucination\scripts\run_eval.py", line 73, in main
+    if args.bench == "pope":
+  File "D:\Anum\VLMs\LVLMs_Hallucination\eval\pope.py", line 58, in run
+    out = pipeline.run(img, item["text"])
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\pipeline.py", line 117, in run
+    text, stats = etv_generate(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\Anum\VLMs\LVLMs_Hallucination\glimpse\decoding.py", line 88, in etv_generate
+    out = model(**pos_inputs, use_cache=True)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llava\modeling_llava.py", line 520, in forward
+    outputs = self.language_model(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llama\modeling_llama.py", line 1189, in forward
+    outputs = self.model(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llama\modeling_llama.py", line 1000, in forward
+    layer_outputs = decoder_layer(
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llama\modeling_llama.py", line 745, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\transformers\models\llama\modeling_llama.py", line 311, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\anaum_ssl\.conda\envs\VHR_Test\lib\site-packages\torch\nn\modules\linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt
+^C
+(VHR_Test) D:\Anum\VLMs\LVLMs_Hallucination>

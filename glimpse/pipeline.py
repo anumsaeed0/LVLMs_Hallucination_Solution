@@ -32,6 +32,10 @@ class ModelAdapter(Protocol):
     def grid_hw(self, batch: dict) -> tuple[int, int]:  ...
     def build_inputs(self, image: Image.Image | None, query: str) -> dict:  ...
     def tvhd_proxy_fn(self, capture: HeadCapture):  ...
+    def project_map(self, hgca: "torch.Tensor", batch: dict) -> "torch.Tensor":
+        """Map the HGCA map from LLM visual-token space to the image patch
+        grid. Identity for grid-isomorphic models (LLaVA, Qwen); Q-Former
+        back-projection for InstructBLIP (PROPOSAL.md novelty #5)."""
 
 
 @dataclass
@@ -40,6 +44,7 @@ class GlimpseConfig:
     reinforced_last_n: int = 14          # 18 for InstructBLIP
     k_head: int = 8
     k_patch: int = 32
+    force_route: str | None = None       # "easy"/"medium"/"hard" ablations
     etv: EtvConfig = None
     router: RouterThresholds = None
 
@@ -75,25 +80,31 @@ class GlimpsePipeline:
         ucp = a.build_ucp_batch(image, query)
         with HeadCapture(a.attn_modules(), a.n_heads, a.head_dim) as cap:
             with self.scaler.disabled():
-                a.model(**ucp)  # one batched forward, three variants
+                # output_attentions only for this probe pass (decode stays
+                # fast); required so attention hooks see real weights
+                a.model(**ucp, output_attentions=True)
             vhd_raw = metrics.vhd_scores(cap.state.head_outputs)
             ta = metrics.ta_scores(cap.state.head_outputs)
             vhd = metrics.prune_outliers(vhd_raw, ta)
-            vaq = metrics.vaq_scores(cap.state.attn_maps,
-                                     a.visual_token_slice(ucp), cfg.k_head)
+            # prefer per-variant slices (left-padding shifts the NO_QUERY span)
+            if hasattr(a, "visual_token_slices"):
+                vslice = a.visual_token_slices(ucp)
+            else:
+                vslice = a.visual_token_slice(ucp)
+            vaq = metrics.vaq_scores(cap.state.attn_maps, vslice, cfg.k_head)
 
         reinforced = list(range(a.n_layers - cfg.reinforced_last_n, a.n_layers))
         self.scaler.set_heads(metrics.select_vhr_heads(vhd, reinforced))
         tvhd_first = metrics.t_vhd(vhd, cfg.k_head)
 
-        # ---- Stage 1: HGCA localization map ----
-        hgca = metrics.hgca_map(vaq, vhd, vaq.best_layer)
+        # ---- Stage 1: HGCA localization map (projected to patch grid) ----
+        hgca = a.project_map(metrics.hgca_map(vaq, vhd, vaq.best_layer), ucp)
         crop = localize(image, hgca, a.grid_hw(ucp), make_counterfactual=False,
                         k_patch=cfg.k_patch)
 
         # ---- Stage 2: route by difficulty ----
         f = features(vaq.vaq_per_layer, vaq.best_layer, tvhd_first, crop.crop_mass)
-        route = decide(f, cfg.router)
+        route = Route(cfg.force_route) if cfg.force_route else decide(f, cfg.router)
 
         # ---- Stage 3/4: route-dependent decoding (VHR active throughout) ----
         self.scaler.enabled = True
@@ -111,7 +122,7 @@ class GlimpsePipeline:
                 box = crop.box
 
             text, stats = etv_generate(
-                a.model, pos, neg,
+                getattr(a, "decode_model", a.model), pos, neg,
                 tvhd_fn=a.tvhd_proxy_fn(None),  # adapter-provided per-step proxy
                 cfg=cfg.etv, tokenizer=a.tokenizer)
         finally:

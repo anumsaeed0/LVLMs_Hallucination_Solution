@@ -1,0 +1,21 @@
+{
+  "model": "llava15",
+  "bench": "textvqa",
+  "metrics": {
+    "accuracy": 0.5019333333333337,
+    "n_samples": 5000
+  },
+  "efficiency": {
+    "n_samples": 5000,
+    "ms_per_sample_mean": 758.171379341092,
+    "ms_per_sample_p50": 705.834399908781,
+    "ms_per_token": 553.2482336114215,
+    "route_mix": {
+      "medium": 3386,
+      "easy": 1614
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 19.265404928
+  },
+  "predictions_file": "results\\llava15\\textvqa_eval_llava_predictions.json"
+}

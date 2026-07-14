@@ -1,0 +1,23 @@
+{
+  "model": "llava15",
+  "bench": "pope",
+  "metrics": {
+    "accuracy": 0.7663333333333333,
+    "precision": 0.718186783178591,
+    "recall": 0.8766666666666667,
+    "f1": 0.7895526868808166,
+    "yes_ratio": 0.6103333333333333
+  },
+  "efficiency": {
+    "n_samples": 3000,
+    "ms_per_sample_mean": 1091.4610273418948,
+    "ms_per_sample_p50": 1107.0582997053862,
+    "ms_per_token": 71.90599033809175,
+    "route_mix": {
+      "medium": 3000
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 18.655821312
+  },
+  "predictions_file": "results\\pope_adv_n_predictions.json"
+}

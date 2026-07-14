@@ -10,6 +10,7 @@ import os
 from dataclasses import dataclass
 
 from PIL import Image
+from tqdm import tqdm
 
 
 @dataclass
@@ -44,11 +45,13 @@ def score(preds: list[str], golds: list[str]) -> PopeMetrics:
 
 
 def run(pipeline, pope_json: str, image_dir: str, profiler=None,
-        limit: int | None = None) -> PopeMetrics:
+        limit: int | None = None,
+        records: list | None = None) -> PopeMetrics:
     preds, golds = [], []
     with open(pope_json) as f:
         items = [json.loads(l) for l in f]
-    for item in items[:limit]:
+    items = items[:limit]
+    for item in tqdm(items, desc="POPE", unit="q", dynamic_ncols=True):
         img = Image.open(os.path.join(image_dir, item["image"])).convert("RGB")
         if profiler is not None:
             with profiler.track() as t:
@@ -58,6 +61,18 @@ def run(pipeline, pope_json: str, image_dir: str, profiler=None,
                        etv_utilization=rho)
         else:
             out = pipeline.run(img, item["text"])
-        preds.append(parse_answer(out.text))
-        golds.append(item["label"].strip().lower())
+        pred = parse_answer(out.text)
+        gold = item["label"].strip().lower()
+        preds.append(pred)
+        golds.append(gold)
+        if records is not None:
+            records.append({
+                "image": item["image"],
+                "question": item["text"],
+                "gold": gold,
+                "model_answer": out.text,
+                "parsed_answer": pred,
+                "correct": pred == gold,
+                "route": out.route.value,
+            })
     return score(preds, golds)
