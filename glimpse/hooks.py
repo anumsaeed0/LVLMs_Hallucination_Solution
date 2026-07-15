@@ -65,7 +65,19 @@ class HeadCapture:
         def hook(module: nn.Module, args, kwargs, output):
             # HF eager attention returns (attn_output, attn_weights, past_kv)
             if isinstance(output, tuple) and len(output) >= 2 and output[1] is not None:
-                self.state.attn_maps[layer_idx] = output[1].detach()
+                attn = output[1]
+                if self.last_token_only:
+                    # keep only the last query row -- all that VAQ reads.
+                    # Storing full TxT maps for every layer costs O(T^2)
+                    # memory (gigabytes at any-res T>1000); this is O(T).
+                    attn = attn[:, :, -1:, :]
+                self.state.attn_maps[layer_idx] = attn.detach().clone()
+                # CRITICAL: strip the full map from the layer output so the
+                # model does not retain all-layer TxT attentions in its
+                # output tuple (~55GB at T=3000 for a 32-layer 7B model --
+                # guaranteed OOM even on 80GB cards).
+                return (output[0], None) + tuple(output[2:])
+            return None
         return hook
 
     def __enter__(self) -> "HeadCapture":

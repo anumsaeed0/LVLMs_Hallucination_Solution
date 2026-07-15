@@ -1,0 +1,21 @@
+{
+  "model": "llava_next",
+  "bench": "aokvqa",
+  "metrics": {
+    "accuracy": 0.6241630276564774,
+    "n_samples": 1145
+  },
+  "efficiency": {
+    "n_samples": 1145,
+    "ms_per_sample_mean": 1360.9099834006458,
+    "ms_per_sample_p50": 1356.3203997910023,
+    "ms_per_token": 1203.275622388988,
+    "route_mix": {
+      "easy": 624,
+      "medium": 521
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 39.627463168
+  },
+  "predictions_file": "results\\llava_next\\aokvqa_eval_llava_predictions.json"
+}

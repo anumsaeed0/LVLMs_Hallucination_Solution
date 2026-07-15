@@ -1,16 +1,20 @@
-"""Model adapters. llava.py is the reference implementation; the others are
-stubs documenting the architecture-specific work items.
+"""Model adapters.
 
-- llava_next.py:   any-res tiling -> variable grid; visual_token_slice must
-                   account for multi-tile layouts; reinforce last 14 layers.
-- qwenvl.py:       dynamic-resolution ViT, variable-length visual tokens;
-                   grid_hw derived per sample from image aspect ratio.
-- instructblip.py: Q-Former (32 query tokens, no spatial isomorphism).
-                   HGCA back-projection: compose LLM->query attention with
-                   Q-Former query->patch cross-attention to recover a
-                   patch-level map (PROPOSAL.md novelty #5). Reinforce last
-                   18 layers per VHR.
+All adapters implement the ModelAdapter protocol (glimpse/pipeline.py):
+UCP batching, visual token slice, patch grid, project_map, VHR hooks target.
+
+Model-specific notes:
+  llava.py        LLaVA-1.5-7B, fixed 24x24 grid. Reference implementation.
+  llava_next.py   LLaVA-NeXT (v1.6) any-res; localization on the 24x24
+                  global view (first 576 visual tokens).
+  instructblip.py Q-Former back-projection to a 16x16 patch grid;
+                  use GlimpseConfig(reinforced_last_n=18).
+  qwenvl.py       Qwen2-VL any-res; grid from image_grid_thw (2x2 merge).
 """
+from .instructblip import InstructBlipAdapter
 from .llava import Llava15Adapter
+from .llava_next import LlavaNextAdapter
+from .qwenvl import QwenVLAdapter
 
-__all__ = ["Llava15Adapter"]
+__all__ = ["Llava15Adapter", "LlavaNextAdapter", "InstructBlipAdapter",
+           "QwenVLAdapter"]

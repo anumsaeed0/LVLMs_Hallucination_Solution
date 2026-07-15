@@ -1,0 +1,21 @@
+{
+  "model": "qwenvl",
+  "bench": "aokvqa",
+  "metrics": {
+    "accuracy": 0.009898107714701601,
+    "n_samples": 1145
+  },
+  "efficiency": {
+    "n_samples": 1145,
+    "ms_per_sample_mean": 26731.176565324797,
+    "ms_per_sample_p50": 22755.844600033015,
+    "ms_per_token": 1160.06659973078,
+    "route_mix": {
+      "easy": 516,
+      "medium": 629
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 20.18303232
+  },
+  "predictions_file": "results\\qwenvl\\aokvqa_eval_predictions.json"
+}

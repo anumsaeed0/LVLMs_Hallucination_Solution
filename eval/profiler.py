@@ -49,7 +49,7 @@ class Profiler:
         }
 
     def dump(self, path: str) -> None:
-        with open(path, "w") as f:
+        with open(path, "w", encoding="utf-8") as f:
             json.dump({"summary": self.summary(),
                        "records": [r.__dict__ for r in self.records]}, f, indent=2)
 

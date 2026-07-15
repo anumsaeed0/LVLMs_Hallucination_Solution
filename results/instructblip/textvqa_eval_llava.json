@@ -1,0 +1,21 @@
+{
+  "model": "instructblip",
+  "bench": "textvqa",
+  "metrics": {
+    "accuracy": 0.2498,
+    "n_samples": 5000
+  },
+  "efficiency": {
+    "n_samples": 5000,
+    "ms_per_sample_mean": 549.0689922975376,
+    "ms_per_sample_p50": 459.3911003321409,
+    "ms_per_token": 438.7637784062151,
+    "route_mix": {
+      "easy": 1440,
+      "medium": 3560
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 16.609475584
+  },
+  "predictions_file": "results\\instructblip\\textvqa_eval_llava_predictions.json"
+}

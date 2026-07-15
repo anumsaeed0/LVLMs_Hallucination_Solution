@@ -19,6 +19,8 @@ class Llava15Adapter:
 
     def __init__(self, model_id: str = "llava-hf/llava-1.5-7b-hf",
                  device: str | None = None, dtype: torch.dtype | None = None):
+        from .resolve import resolve
+        model_id = resolve(model_id)
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.dtype = dtype or (torch.float16 if self.device == "cuda"
                                else torch.float32)
@@ -93,16 +95,28 @@ class Llava15Adapter:
         }
         return {k: v.to(self.device) for k, v in batch.items()}
 
-    def visual_token_slice(self, batch: dict) -> slice:
-        ids = batch["input_ids"][0]
+    def _img_slice(self, ids: torch.Tensor) -> slice:
         image_token = self.model.config.image_token_index
         pos = (ids == image_token).nonzero(as_tuple=True)[0]
-        # after embedding expansion, 576 visual tokens replace the placeholder
         start = int(pos[0])
         return slice(start, start + self.grid[0] * self.grid[1])
 
+    def visual_token_slices(self, batch: dict) -> tuple[slice, slice]:
+        """Per-variant visual spans: with left-padding, the NO_QUERY variant's
+        image span is shifted right relative to FULL. Using one slice for both
+        misaligns the contrastive subtraction (degrades HGCA to raw attention)."""
+        ids = batch["input_ids"]
+        return self._img_slice(ids[0]), self._img_slice(ids[2])
+
+    # backward-compat: single slice of the FULL variant
+    def visual_token_slice(self, batch: dict) -> slice:
+        return self._img_slice(batch["input_ids"][0])
+
     def grid_hw(self, batch: dict) -> tuple[int, int]:
         return self.grid
+
+    def project_map(self, hgca: torch.Tensor, batch: dict) -> torch.Tensor:
+        return hgca  # grid-isomorphic: visual tokens ARE the patch grid
 
     def tvhd_proxy_fn(self, capture):
         """Per-step T-VHD proxy for ETV. Full implementation maintains a

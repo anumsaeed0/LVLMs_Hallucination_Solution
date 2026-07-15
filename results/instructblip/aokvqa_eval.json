@@ -1,0 +1,21 @@
+{
+  "model": "instructblip",
+  "bench": "aokvqa",
+  "metrics": {
+    "accuracy": 0.4544395924308585,
+    "n_samples": 1145
+  },
+  "efficiency": {
+    "n_samples": 1145,
+    "ms_per_sample_mean": 512.8265269914049,
+    "ms_per_sample_p50": 499.68540016561747,
+    "ms_per_token": 495.5159269241844,
+    "route_mix": {
+      "medium": 945,
+      "easy": 200
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 16.323059712
+  },
+  "predictions_file": "results\\instructblip\\aokvqa_eval_predictions.json"
+}

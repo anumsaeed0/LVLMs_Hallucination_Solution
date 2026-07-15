@@ -1,0 +1,21 @@
+{
+  "model": "llava_next",
+  "bench": "textvqa",
+  "metrics": {
+    "accuracy": 0.5946000000000002,
+    "n_samples": 5000
+  },
+  "efficiency": {
+    "n_samples": 5000,
+    "ms_per_sample_mean": 1573.0028861836531,
+    "ms_per_sample_p50": 1528.3216000534594,
+    "ms_per_token": 1074.8960545193747,
+    "route_mix": {
+      "medium": 2883,
+      "easy": 2117
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 39.65677056
+  },
+  "predictions_file": "results\\llava_next\\textvqa_eval_llava_predictions.json"
+}

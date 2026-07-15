@@ -1,0 +1,24 @@
+{
+  "model": "llava15",
+  "bench": "chair",
+  "metrics": {
+    "chair_s": 0.44,
+    "chair_i": 0.17152542372881355,
+    "recall": 0.7332854061826024,
+    "avg_len": 76.746,
+    "n_images": 500
+  },
+  "efficiency": {
+    "n_samples": 500,
+    "ms_per_sample_mean": 5910.955637395382,
+    "ms_per_sample_p50": 5849.641799926758,
+    "ms_per_token": 77.0197226877672,
+    "route_mix": {
+      "medium": 225,
+      "easy": 275
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 18.756014592
+  },
+  "predictions_file": "results\\llava15\\chair_seed1_predictions.json"
+}

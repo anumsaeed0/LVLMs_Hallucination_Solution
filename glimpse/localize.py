@@ -73,6 +73,8 @@ def mask_top_patches(image: Image.Image, hgca: torch.Tensor,
 
 def localize(image: Image.Image, hgca: torch.Tensor, grid_hw: tuple[int, int],
              make_counterfactual: bool = False, k_patch: int = 32) -> CropResult:
+    # tiny map; do all geometry on CPU to avoid device mismatches
+    hgca = hgca.detach().float().cpu()
     box, mass = crop_box_from_map(hgca, grid_hw, image.size)
     image_pos = image.crop(box)
     image_neg = None

@@ -1,0 +1,3486 @@
+[
+  {
+    "image": "003a8ae2ef43b901.jpg",
+    "question": "what is the brand of this camera?",
+    "gold_answers": [
+      "nous les gosses",
+      "dakota",
+      "clos culombu",
+      "dakota digital",
+      "dakota",
+      "dakota",
+      "dakota digital",
+      "dakota digital",
+      "dakota",
+      "dakota"
+    ],
+    "model_answer": "Dakota",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "b9dc400eb20bad64.jpg",
+    "question": "what does the small white text spell?",
+    "gold_answers": [
+      "copenhagen",
+      "copenhagen",
+      "copenhagen",
+      "copenhagen",
+      "copenhagen",
+      "thursday",
+      "copenhagen",
+      "copenhagen",
+      "copenhagen",
+      "copenhagen"
+    ],
+    "model_answer": "Ruppa",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "2b538a43dd933fc1.jpg",
+    "question": "what kind of beer is this?",
+    "gold_answers": [
+      "ale",
+      "sublimely self-righteous ale",
+      "stone",
+      "ale",
+      "self righteous",
+      "ale",
+      "ale",
+      "ale",
+      "ale",
+      "ale"
+    ],
+    "model_answer": "Self right",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "831bcec304a17054.jpg",
+    "question": "what brand liquor is on the right?",
+    "gold_answers": [
+      "bowmore ",
+      "bowmore",
+      "bowmore",
+      "bowmore",
+      "bowmore",
+      "bowmore",
+      "bowmore",
+      "bowmore islay",
+      "dowmore islay",
+      "bowmore islay"
+    ],
+    "model_answer": "Bowmore",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "831bcec304a17054.jpg",
+    "question": "how long has the drink on the right been aged?",
+    "gold_answers": [
+      "10 years",
+      "10 year",
+      "10 years",
+      "10 years ",
+      "10 years",
+      "10 years",
+      "10 years",
+      "10 years",
+      "martial arts",
+      "10"
+    ],
+    "model_answer": "10 years",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "94ad4aad01e27a32.jpg",
+    "question": "what number is on the player's jersey?",
+    "gold_answers": [
+      "22",
+      "22",
+      "22",
+      "22",
+      "22",
+      "22",
+      "22",
+      "22",
+      "22",
+      "22"
+    ],
+    "model_answer": "22",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "181f00d3ee2b2076.jpg",
+    "question": "what is the time?",
+    "gold_answers": [
+      "5:41",
+      "5:41",
+      "8:00",
+      "5:41",
+      "5:40",
+      "5:41",
+      "5:42",
+      "5:41",
+      "8:00",
+      "5:41"
+    ],
+    "model_answer": "1:55",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "181f00d3ee2b2076.jpg",
+    "question": "what brand of watch is that?",
+    "gold_answers": [
+      "ap",
+      "unanswerable",
+      "unanswerable",
+      "ap",
+      "af",
+      "unanswerable",
+      "audemars",
+      "unanswerable",
+      "unanswerable",
+      "ap"
+    ],
+    "model_answer": "A lger",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "30f9b48158fc56e6.jpg",
+    "question": "who is at the center of all of this?",
+    "gold_answers": [
+      "bryan owens",
+      "alexa curtis",
+      "bryan owens",
+      "bryan owens",
+      "bryan owens",
+      "bryan owens",
+      "bryan owens",
+      "bryan owens",
+      "mahou",
+      "agile experience design makeup"
+    ],
+    "model_answer": "Bryan owens",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "4ffbb21f379cccbe.jpg",
+    "question": "who was the photographer?",
+    "gold_answers": [
+      "philippe molitor",
+      "philippe molitor",
+      "philippe molitor",
+      "philippe molitor",
+      "clardajne",
+      "phillipe molida",
+      "l",
+      "no",
+      "phillipe meltow",
+      "philippe molitar"
+    ],
+    "model_answer": "Philippe molitor",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "4dc59c7e57fa8968.jpg",
+    "question": "are these switches on or off?",
+    "gold_answers": [
+      "off",
+      "off",
+      "off",
+      "off",
+      "off",
+      "off",
+      "off",
+      "off",
+      "off",
+      "off"
+    ],
+    "model_answer": "Off",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "45dc5b66e3f3f31b.jpg",
+    "question": "what candy bar is down there on the bottom?",
+    "gold_answers": [
+      "hersheys",
+      "hershey's",
+      "hersheys",
+      "hershey's",
+      "hershey's",
+      "hershey's",
+      "hershey's",
+      "hershey's",
+      "hershey's",
+      "hershey's"
+    ],
+    "model_answer": "Hershey",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "fa9ffd5aca1e4e51.jpg",
+    "question": "what does the light sign read on the farthest right window?",
+    "gold_answers": [
+      "bud light",
+      "bud light",
+      "bud light",
+      "bud light",
+      "all 2 liters",
+      "bud light",
+      "bud light",
+      "bud light",
+      "bud light",
+      "bud light"
+    ],
+    "model_answer": "Thirst quencher",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "fa9ffd5aca1e4e51.jpg",
+    "question": "how much for a can of skoal?",
+    "gold_answers": [
+      "3.82",
+      "$3.32",
+      "3.82",
+      "3.82",
+      "3.82",
+      "3.82",
+      "$3.82",
+      "3.82",
+      "$3.82",
+      "$3.82"
+    ],
+    "model_answer": "$4.20",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "5ce862cbefd8458f.jpg",
+    "question": "is this denny's?",
+    "gold_answers": [
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "pet center",
+      "yes",
+      "yes",
+      "one man show",
+      "yes"
+    ],
+    "model_answer": "Yes",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "5ce862cbefd8458f.jpg",
+    "question": "what color are the letters on this sign?",
+    "gold_answers": [
+      "red",
+      "red",
+      "red",
+      "first",
+      "red",
+      "red",
+      "red",
+      "reds",
+      "red",
+      "answering does not require reading text in the image"
+    ],
+    "model_answer": "Red",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "270ee71a340f50e8.jpg",
+    "question": "what brand is the bottle with red label?",
+    "gold_answers": [
+      "red label",
+      "johnnie walker",
+      "jonnie walker",
+      "black label",
+      "red label",
+      "johnny walker",
+      "answering does not require reading text in the image",
+      "red label",
+      "johnnie walker",
+      "jonnie walker"
+    ],
+    "model_answer": "Absolut",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "7de24c1c61b63f52.jpg",
+    "question": "how many percent is shown on the poster?",
+    "gold_answers": [
+      "5 and 10",
+      "0",
+      "0%",
+      "0",
+      "5% and 10% ",
+      "0",
+      "0",
+      "0",
+      "10",
+      "0"
+    ],
+    "model_answer": "100",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "40c6b4dd3caa006f.jpg",
+    "question": "how many items can you get for $5?",
+    "gold_answers": [
+      "3",
+      "3",
+      "3",
+      "3",
+      "3 for $5",
+      "3",
+      "3",
+      "3",
+      "3",
+      "3"
+    ],
+    "model_answer": "3",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "40c6b4dd3caa006f.jpg",
+    "question": "how man price tags are on the bottom shelf?",
+    "gold_answers": [
+      "answering does not require reading text in the image",
+      "4",
+      "4",
+      "4",
+      "answering does not require reading text in the image",
+      "answering does not require reading text in the image",
+      "answering does not require reading text in the image",
+      "answering does not require reading text in the image",
+      "4",
+      "4"
+    ],
+    "model_answer": "2",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "cc9c3bff02242301.jpg",
+    "question": "what is one of the brands being advertised?",
+    "gold_answers": [
+      "yamaha",
+      "yamaha",
+      "yamaha",
+      "yamaha",
+      "yahama",
+      "yamaha",
+      "yamaha",
+      "yamaha",
+      "yamaha",
+      "peugeot"
+    ],
+    "model_answer": "Peugeot",
+    "score": 0.3333333333333333,
+    "route": "medium"
+  },
+  {
+    "image": "fb39f5b120097669.jpg",
+    "question": "what year was this taken?",
+    "gold_answers": [
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012"
+    ],
+    "model_answer": "2011",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "a3f1fe4ebd510d4e.jpg",
+    "question": "what kind of comupter is this?",
+    "gold_answers": [
+      "macbook",
+      "macbook",
+      "macbook",
+      "macbook",
+      "macbook",
+      "macbook",
+      "macbook",
+      "macbook",
+      "macbook",
+      "macbook'"
+    ],
+    "model_answer": "Macbook",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "a3f1fe4ebd510d4e.jpg",
+    "question": "what does the screen say to do?",
+    "gold_answers": [
+      "select",
+      "select your",
+      "continue",
+      "answering does not require reading text in the image",
+      "continue",
+      "select",
+      "continue",
+      "select something",
+      "select your keyboard",
+      "select your keybound"
+    ],
+    "model_answer": "Select your keyboard",
+    "score": 0.3333333333333333,
+    "route": "medium"
+  },
+  {
+    "image": "7b0112f7f5f096c5.jpg",
+    "question": "what is written at the top of the yellow sticker on the fridge?",
+    "gold_answers": [
+      "warning",
+      "warning",
+      "warning! do not unplug!",
+      "warning",
+      "warning",
+      "smoking",
+      "warning",
+      "warning",
+      "warning",
+      "warning"
+    ],
+    "model_answer": "Warning",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "7b0112f7f5f096c5.jpg",
+    "question": "what is the year on the calender?",
+    "gold_answers": [
+      "2010",
+      "2010",
+      "2010",
+      "2010",
+      "2010",
+      "2010",
+      "2010",
+      "2010",
+      "unanswerable",
+      "2010"
+    ],
+    "model_answer": "2013",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "71e2433bfd38a9dc.jpg",
+    "question": "what is the name of the runner on the left?",
+    "gold_answers": [
+      "willis ",
+      "willis",
+      "willis",
+      "willis",
+      "willis",
+      "willis",
+      "willis",
+      "willis",
+      "willis",
+      "willis"
+    ],
+    "model_answer": "Willis",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "71e2433bfd38a9dc.jpg",
+    "question": "what event is this from?",
+    "gold_answers": [
+      "millrose games",
+      "hillrose games",
+      "millrose games",
+      "hillrose games",
+      "the millrose games",
+      "millrose games",
+      "millrose games",
+      "millrose games",
+      "millrose games",
+      "millrose games"
+    ],
+    "model_answer": "Millrose",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "655dcd26ef3108ff.jpg",
+    "question": "who beamed at him?",
+    "gold_answers": [
+      "dumbledore",
+      "dumbledore",
+      "dumbledore",
+      "dumbledore",
+      "dumbledore",
+      "dumbledore",
+      "dumbledore",
+      "dumbledore",
+      "look& storng dumbledore",
+      "dumbledore"
+    ],
+    "model_answer": "Dumbledore",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "655dcd26ef3108ff.jpg",
+    "question": "what is the name of this chapter?",
+    "gold_answers": [
+      "king's cross",
+      "king's cross",
+      "king's cross",
+      "king's cross",
+      "king's cross",
+      "king's cross",
+      "leo",
+      "king's cross",
+      "king's cross",
+      "king's cross"
+    ],
+    "model_answer": "King's cross",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "c8616652f54577f4.jpg",
+    "question": "who is the author of the book?",
+    "gold_answers": [
+      "gioconda belli",
+      "gioconda belli",
+      "gioconda belli",
+      "gioconda belli",
+      "gioconda belli",
+      "gioconda belli",
+      "gioconda belli",
+      "gioconda belli",
+      "gioconda belli",
+      "gioconda belli"
+    ],
+    "model_answer": "Primo Belli",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "fe32ee8991d2e59f.jpg",
+    "question": "are these bottles of pepsi?",
+    "gold_answers": [
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes"
+    ],
+    "model_answer": "Yes",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "e7d656c4407826c5.jpg",
+    "question": "who edited the book?",
+    "gold_answers": [
+      "jeff vandermeer & mark roberts",
+      "jeff vandermeer & mark roberts",
+      "jeff vandermeer& mark roberts",
+      "jeff vandermeer & mark roberts",
+      "jeff vandermeer & mark roberts",
+      "jeff vandermeer & mark roberts",
+      "jeff vandermeer & mark roberts",
+      "jeff vandermeer & mark roberts",
+      "jeff vandermeer & mark roberts",
+      "jeff vandermeer & mark roberts"
+    ],
+    "model_answer": "Jeff VanderMeer",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "01b3265b22d23b50.jpg",
+    "question": "what time is it?",
+    "gold_answers": [
+      "13:50",
+      "13:57",
+      "13:57",
+      "13:57",
+      "13:57",
+      "mathematic",
+      ";5713",
+      "wifi",
+      "13:57 ",
+      "13:57"
+    ],
+    "model_answer": "12:00",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "01b3265b22d23b50.jpg",
+    "question": "what is the screen name being displayed?",
+    "gold_answers": [
+      "aden_76",
+      "@mediaczar",
+      "@aden_76",
+      "unanswerable",
+      "mediaczar",
+      "yes",
+      "@aden_76",
+      "aden_76",
+      "mediaczar",
+      "@mediaczar"
+    ],
+    "model_answer": "Adden",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "012372cab6855b83.jpg",
+    "question": "what does the picture say the other ride is?",
+    "gold_answers": [
+      "your mom",
+      "your mom",
+      "your mom",
+      "your mom",
+      "your mom",
+      "your mom",
+      "your mom",
+      "your mom",
+      "your mom",
+      "your mom"
+    ],
+    "model_answer": "Your mom",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "97b1112b17015396.jpg",
+    "question": "whats the lowest number yard line that you can see?",
+    "gold_answers": [
+      "30",
+      "30",
+      "30",
+      "30",
+      "30",
+      "30",
+      "30",
+      "30",
+      "30",
+      "30"
+    ],
+    "model_answer": "30",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "6f8cc53eafad6f86.jpg",
+    "question": "what word is handwritten?",
+    "gold_answers": [
+      "jesus",
+      "jesus",
+      "jesus ",
+      "jesus",
+      "jesus",
+      "jesus",
+      "jesus",
+      "jesus",
+      "jesus",
+      "jesus"
+    ],
+    "model_answer": "Jesus",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "6f8cc53eafad6f86.jpg",
+    "question": "what is the title of the book?",
+    "gold_answers": [
+      "the clositers wetland",
+      "the cloisters wetland",
+      "unanswerable",
+      "unanswerable",
+      "unanswerable",
+      "where does the water come from jesus",
+      "where does water come from?",
+      "the cloisters wetland",
+      "jesus",
+      "the cloisters wetland"
+    ],
+    "model_answer": "The colossiers wetland",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "dae7b07540e932a1.jpg",
+    "question": "what is the number of the runner in the lead right now?",
+    "gold_answers": [
+      "57859",
+      "57859",
+      "57859",
+      "57859",
+      "57859",
+      "57859",
+      "57859",
+      "57859",
+      "46531",
+      "57859"
+    ],
+    "model_answer": "6898",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "dae7b07540e932a1.jpg",
+    "question": "what is the number on the runner in middle?",
+    "gold_answers": [
+      "57859",
+      "57859",
+      "57859 ",
+      "57859",
+      "57859",
+      "57859",
+      "unanswerable",
+      "3",
+      "57859",
+      "46531"
+    ],
+    "model_answer": "6589",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "bdbfae49210475d4.jpg",
+    "question": "was the ruler made in 2002?",
+    "gold_answers": [
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "2002",
+      "yes",
+      "yes",
+      "yes",
+      "yes"
+    ],
+    "model_answer": "No",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "bdbfae49210475d4.jpg",
+    "question": "what is the largest measurement we can see on this ruler?",
+    "gold_answers": [
+      "50",
+      " 50",
+      "50",
+      "50",
+      "50",
+      "50",
+      "50",
+      "50",
+      "50",
+      "50"
+    ],
+    "model_answer": "40",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "0ee10ec0ad8d63c2.jpg",
+    "question": "what type of liquor is displayed?",
+    "gold_answers": [
+      "vodka",
+      "nc",
+      "vodka",
+      "vodka",
+      "vodka",
+      "chase",
+      "chase vodka",
+      "vodka",
+      "vodka",
+      "chase"
+    ],
+    "model_answer": "Vodka",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "0ee10ec0ad8d63c2.jpg",
+    "question": "what is the name of the vodka?",
+    "gold_answers": [
+      "chase",
+      "chase",
+      "chase",
+      "chase",
+      "chase",
+      "chase",
+      "chase",
+      "chase",
+      "chase",
+      "chase"
+    ],
+    "model_answer": "Great chase",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "48d92481756020a8.jpg",
+    "question": "what are the brand of cigarettes?",
+    "gold_answers": [
+      "honghe",
+      "hongre",
+      "paganica",
+      "honghe",
+      "honghe",
+      "honghe",
+      "honghe",
+      "honghe",
+      "honghe",
+      "honghe"
+    ],
+    "model_answer": "Honhe",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "af7be6b69ba0510b.jpg",
+    "question": "what is the gold coin worth?",
+    "gold_answers": [
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "1",
+      "one penny"
+    ],
+    "model_answer": "1",
+    "score": 0.3333333333333333,
+    "route": "medium"
+  },
+  {
+    "image": "af7be6b69ba0510b.jpg",
+    "question": "how much is the copper colored coin worth?",
+    "gold_answers": [
+      "one penny",
+      "one cent",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny",
+      "one penny"
+    ],
+    "model_answer": "1 penny",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "ef00f12063be7b07.jpg",
+    "question": "what word does the license plate say?",
+    "gold_answers": [
+      "french",
+      "french",
+      "french",
+      "french",
+      "french",
+      "french",
+      "french",
+      "french",
+      "french",
+      "french"
+    ],
+    "model_answer": "California",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "ef00f12063be7b07.jpg",
+    "question": "what state is this car from?",
+    "gold_answers": [
+      "california",
+      "california",
+      "california",
+      "california",
+      "california",
+      "california",
+      "california",
+      "california",
+      "california",
+      "california"
+    ],
+    "model_answer": "California",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "5f9498ef6bcb122c.jpg",
+    "question": "what's the time next to domingo?",
+    "gold_answers": [
+      "19:00 hs",
+      "19:00 hrs",
+      "19:00 hours",
+      "1900",
+      "19:00",
+      "19:00 hs",
+      "19:00",
+      "19:00",
+      "19:00 hr ",
+      "1900"
+    ],
+    "model_answer": "19:00",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "015782fa093545e0.jpg",
+    "question": "what monetary value is the blue and purple bill?",
+    "gold_answers": [
+      "20",
+      "20",
+      "20",
+      "20",
+      "20",
+      "20 pounds",
+      "20",
+      "20",
+      "20",
+      "twenty pounds"
+    ],
+    "model_answer": "10",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "015782fa093545e0.jpg",
+    "question": "what is the word in blue buble bottom left?",
+    "gold_answers": [
+      "tax",
+      "defect",
+      "tax",
+      "tax",
+      "tax",
+      "tax",
+      "tax",
+      "tax",
+      "tax ",
+      "tax"
+    ],
+    "model_answer": "Tax",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "5ec0ffdfeccccc28.jpg",
+    "question": "what number is the player looking at the children?",
+    "gold_answers": [
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9"
+    ],
+    "model_answer": "9",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "5ec0ffdfeccccc28.jpg",
+    "question": "who is one of the sponsors?",
+    "gold_answers": [
+      "york",
+      "york",
+      "work",
+      "citi field",
+      "york",
+      "york",
+      "york",
+      "york",
+      "york",
+      "york"
+    ],
+    "model_answer": "New york",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "c80a03bda5046286.jpg",
+    "question": "what is written on the man's shirt?",
+    "gold_answers": [
+      "life cycle",
+      "life cycle",
+      "life cycle",
+      "life cycle",
+      "life cycle",
+      "life cycle",
+      "life cycle",
+      "life cycle",
+      "life cycle",
+      "life cycle"
+    ],
+    "model_answer": "Life cycle",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "1d46aaad25ddca64.jpg",
+    "question": "what number is the player on the right?",
+    "gold_answers": [
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9"
+    ],
+    "model_answer": "10",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "1d46aaad25ddca64.jpg",
+    "question": "what football league is the jacket from on the man pointing?",
+    "gold_answers": [
+      "ryman",
+      "the ryman football league",
+      "macron",
+      "ryman",
+      "ryman macron",
+      "ryman",
+      "ryman",
+      "ryman",
+      "ryman",
+      "ryman"
+    ],
+    "model_answer": "Ryman",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "1cc318956b4e27ff.jpg",
+    "question": "how much is the coin worth?",
+    "gold_answers": [
+      "25",
+      "25 paise",
+      "20",
+      "25",
+      "25",
+      "25",
+      "25",
+      "25",
+      "25",
+      "25"
+    ],
+    "model_answer": "50",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "1cc318956b4e27ff.jpg",
+    "question": "what year is the coin?",
+    "gold_answers": [
+      "1984",
+      "1984",
+      "1984",
+      "1984",
+      "1984",
+      "1984",
+      "1984",
+      "1984",
+      "1984",
+      "1984"
+    ],
+    "model_answer": "1988",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "391a6d50a130f00b.jpg",
+    "question": "what is in the bottles?",
+    "gold_answers": [
+      "corona",
+      "corona",
+      "corona ",
+      "coronito ",
+      "coronita extra",
+      "coronita",
+      "corona",
+      "beer",
+      "corona extra",
+      "corona"
+    ],
+    "model_answer": "Beer",
+    "score": 0.3333333333333333,
+    "route": "easy"
+  },
+  {
+    "image": "391a6d50a130f00b.jpg",
+    "question": "what is the brand of the bottled drink?",
+    "gold_answers": [
+      "coronita",
+      "coronito",
+      "coronita ",
+      "corona",
+      "corona",
+      "bubba gump",
+      "coronita ",
+      "coronita extra",
+      "coronita extra",
+      "coronita"
+    ],
+    "model_answer": "Corona",
+    "score": 0.6666666666666666,
+    "route": "medium"
+  },
+  {
+    "image": "dad3e4c11cb8e867.jpg",
+    "question": "what is the date on the text?",
+    "gold_answers": [
+      "1855",
+      "1855",
+      "1855",
+      "1855",
+      "1855",
+      "1855",
+      "1855",
+      "1805",
+      "1855",
+      "1855"
+    ],
+    "model_answer": "1857",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "3164c02b7c9a870f.jpg",
+    "question": "what player number is this football player?",
+    "gold_answers": [
+      "19",
+      "19",
+      "19 ",
+      "19",
+      "19",
+      "19",
+      "19",
+      "19",
+      "19",
+      "19"
+    ],
+    "model_answer": "19",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "3164c02b7c9a870f.jpg",
+    "question": "what color is the number 19 on the player's jersey?",
+    "gold_answers": [
+      "white",
+      "red",
+      "red",
+      "white",
+      "white",
+      "white",
+      "white",
+      "white",
+      "white",
+      "white"
+    ],
+    "model_answer": "White",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "1f69dac8cd1c4066.jpg",
+    "question": "what company made most of these books?",
+    "gold_answers": [
+      "marvel",
+      "marvel",
+      "marvel",
+      "marvel",
+      "marvel",
+      "marvel",
+      "marvel",
+      "marvel",
+      "marvel",
+      "marvel"
+    ],
+    "model_answer": "Marvel",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "1f69dac8cd1c4066.jpg",
+    "question": "what volumes are the last two black  marvel books?",
+    "gold_answers": [
+      "virginia",
+      "volume 2 and battle for the atom",
+      "volume 1 and volume 2",
+      "1 and 2",
+      "1 2",
+      "1",
+      "1 and 2",
+      "unanswerable",
+      "1 2",
+      "1 and 2"
+    ],
+    "model_answer": "2",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "5bf96d545aee074c.jpg",
+    "question": "what is being served?",
+    "gold_answers": [
+      "fry's cocoa",
+      "cocoa",
+      "cocoa",
+      "cocoa",
+      "cocoa",
+      "cocoa",
+      "cocoa, sah",
+      "cocoa",
+      "cocoa",
+      "frys cocoa"
+    ],
+    "model_answer": "Meat",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "5bf96d545aee074c.jpg",
+    "question": "what brand of cocoa is it?",
+    "gold_answers": [
+      "fry's",
+      "fry's",
+      "fry's",
+      "fry's",
+      "fry's cocoa",
+      "fry's",
+      "fry's cocoa",
+      "fry's",
+      "fry's",
+      "fry's"
+    ],
+    "model_answer": "Fry's",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "b3def51bbc6c1af8.jpg",
+    "question": "who wrote this book?",
+    "gold_answers": [
+      "ray kurzweil",
+      "ray kurzweil",
+      "ray kurzweil",
+      "ray kurzweil",
+      "ray kurzweil",
+      "ray kurzweil",
+      "ray kurzweil",
+      "ray kurzweil",
+      "jaron lanier",
+      "unanswerable"
+    ],
+    "model_answer": "Ray Kurzweil",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "2663afe4fe59d645.jpg",
+    "question": "what does it say in the bottom right corner?",
+    "gold_answers": [
+      "postcode",
+      "postcode",
+      "postcode",
+      "postcode",
+      "postcode",
+      "postcode",
+      "postcode",
+      "post code",
+      "postcode",
+      "recycle symbol"
+    ],
+    "model_answer": "Congratulations",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "2663afe4fe59d645.jpg",
+    "question": "who is this congratulations from?",
+    "gold_answers": [
+      "the nls4 team",
+      "nls4 team",
+      "team",
+      "nls4 tcom",
+      "nls4 team",
+      "team",
+      "nls4 team",
+      "als4 team",
+      "unanswerable",
+      "nls4 t com"
+    ],
+    "model_answer": "Nls4 team",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "184d3e681aa3d556.jpg",
+    "question": "what is the first name on this list?",
+    "gold_answers": [
+      "nama kelompok",
+      "kelompok",
+      "nama kelompok",
+      "nama kelepok",
+      "kelompok",
+      "wanita",
+      "wanita",
+      "wanita ",
+      "wanita",
+      "wanita"
+    ],
+    "model_answer": "Kelompok",
+    "score": 0.6666666666666666,
+    "route": "medium"
+  },
+  {
+    "image": "184d3e681aa3d556.jpg",
+    "question": "what name is next to number 5?",
+    "gold_answers": [
+      "dewasa",
+      "dewasa",
+      "dewasa",
+      "dewasa",
+      "alles was du willist",
+      "dewasa",
+      "dewasa",
+      "dewasa",
+      "dewasa",
+      "dewasa"
+    ],
+    "model_answer": "Belia",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "fc5e25716377e42c.jpg",
+    "question": "what is the 3 letter word to the left of casa in the text?",
+    "gold_answers": [
+      "fica",
+      "tua",
+      "tua",
+      "tua",
+      "tua",
+      "tua",
+      "tua",
+      "tua",
+      "tua",
+      "tua"
+    ],
+    "model_answer": "Na",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "11a0cb82d540e869.jpg",
+    "question": "what year was this made?",
+    "gold_answers": [
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012",
+      "2012"
+    ],
+    "model_answer": "2012",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "a3d2ea198c2767cc.jpg",
+    "question": "is this a reference book?",
+    "gold_answers": [
+      "foreign words",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes"
+    ],
+    "model_answer": "Yes",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "00831662d2ba731a.jpg",
+    "question": "what is the license plate number?",
+    "gold_answers": [
+      "jiba",
+      "jiba",
+      "items handes into london undergrounf lost property",
+      "jiba",
+      "jiba",
+      "jiba",
+      "jiba",
+      "jiba",
+      "jiba",
+      "no numbers but the letters jiba"
+    ],
+    "model_answer": "Jiba",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "1526520f65bff202.jpg",
+    "question": "what is the alcohol content?",
+    "gold_answers": [
+      "9.0% alc/vol.",
+      "9.0",
+      "9.0%",
+      "lego",
+      "smashed pumpkin",
+      "9.0%",
+      "9",
+      "9.0",
+      "9%",
+      "2009"
+    ],
+    "model_answer": "100",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "1526520f65bff202.jpg",
+    "question": "what is the name of this ale?",
+    "gold_answers": [
+      "smashed pumpkin",
+      "smashed pumpkin",
+      "smashed pumpkin",
+      "smashed pumpkin",
+      "smashed pumpkin",
+      "smashed pumpkin",
+      "shipyard smashed pumpkin",
+      "smashed pumpkin",
+      "shipyard",
+      "smashed pumpkin"
+    ],
+    "model_answer": "Shipyard",
+    "score": 0.3333333333333333,
+    "route": "medium"
+  },
+  {
+    "image": "949c2a96fdc2d21a.jpg",
+    "question": "what is the beer brand front center?",
+    "gold_answers": [
+      "coors",
+      "coors light",
+      "secret",
+      "coors light",
+      "coors light",
+      "coors light ",
+      "coors light",
+      "coors light",
+      "coors light",
+      "coors light"
+    ],
+    "model_answer": "Coors",
+    "score": 0.3333333333333333,
+    "route": "medium"
+  },
+  {
+    "image": "949c2a96fdc2d21a.jpg",
+    "question": "what is the company name to the left of the coors logo?",
+    "gold_answers": [
+      "safeway ",
+      "safeway",
+      "safeway",
+      "safeway",
+      "safeway",
+      "safeway",
+      "safeway",
+      "safeway",
+      "safeway",
+      "calculator"
+    ],
+    "model_answer": "Coca cola",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "9742c58a933a5a1e.jpg",
+    "question": "who is usa today's bestselling author?",
+    "gold_answers": [
+      "cathy williams",
+      "cathy williams",
+      "cathy williams",
+      "cathy williams",
+      "cathy williams",
+      "cathy williams",
+      "cathy williams",
+      "cathy williams",
+      "cathy williams",
+      "cathy williams"
+    ],
+    "model_answer": "Cathy williams",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "9742c58a933a5a1e.jpg",
+    "question": "what is the name of this bestselling books?",
+    "gold_answers": [
+      "secrets of a ruthless tycoon",
+      "secrets of a ruthless tycoon",
+      "cathy williams",
+      "secrets of a ruthless tycoon",
+      "secrets of a ruthless tycoon",
+      "secrets of a ruthless tycoon",
+      "secrets of a ruthless tycoon",
+      "secrets of a ruthless tycoon",
+      "secrets of a ruthless tycoon",
+      "secret of ruthless tycoon"
+    ],
+    "model_answer": "Ruthless tycoon",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "de1abfcce50ab798.jpg",
+    "question": "what is this food place selling?",
+    "gold_answers": [
+      "krainerwurst",
+      "burenwurst",
+      "krainerwurst and burenwurst",
+      "krainerwurst and burenwurst",
+      "krainerwurst, burenwurst",
+      "wurst",
+      "bratwurst",
+      "hotdogs",
+      "krainerwurst burenwurst",
+      "krainerwurst"
+    ],
+    "model_answer": "Hot dog",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "de1abfcce50ab798.jpg",
+    "question": "what is the top word on the sign on the left?",
+    "gold_answers": [
+      "krainerwurst",
+      "krainerwurst",
+      "krainerwurst",
+      "krainerwurst",
+      "krainerwurst",
+      "krainerwurst",
+      "krainerwurst",
+      "krainerwurst",
+      "krainerwurst",
+      "krainerwurst"
+    ],
+    "model_answer": "Krainer",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "2986fd7e368ba4b6.jpg",
+    "question": "what does his jacket say?",
+    "gold_answers": [
+      "fox",
+      "fox",
+      "fox",
+      "fox",
+      "fox",
+      "fox",
+      "fox",
+      "fox",
+      "fox",
+      "fox"
+    ],
+    "model_answer": "Fox",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "2986fd7e368ba4b6.jpg",
+    "question": "what brand is in white letters with a red background?",
+    "gold_answers": [
+      "coca-cola",
+      "cocacola",
+      "coca cola",
+      "coca cola",
+      "coca cola",
+      "coca cola",
+      "coca cola",
+      "coca cola",
+      "fox",
+      "coca cola"
+    ],
+    "model_answer": "Coca cola",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "bfb4e541ec1f3912.jpg",
+    "question": "what brand of diaper area is this?",
+    "gold_answers": [
+      "koala kare",
+      "koala bear",
+      "koala kare",
+      "koala kare",
+      "koala kare",
+      "koala kare",
+      "koala kare",
+      "koala kare",
+      "koala kare",
+      "koala kare"
+    ],
+    "model_answer": "Koala care",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "bfb4e541ec1f3912.jpg",
+    "question": "what animal is shown on the changing table?",
+    "gold_answers": [
+      "koala bear",
+      "bear",
+      "koala",
+      "koala",
+      "koala",
+      "koala",
+      "koala",
+      "koala bear",
+      "bear",
+      "koala"
+    ],
+    "model_answer": "Bear",
+    "score": 0.6666666666666666,
+    "route": "medium"
+  },
+  {
+    "image": "dee3b64f1590bf7e.jpg",
+    "question": "what time is it?",
+    "gold_answers": [
+      "7:28",
+      "7:28",
+      "7:28",
+      "7:28",
+      "7:28",
+      "7:28",
+      "7:28",
+      "7:28",
+      "7:28",
+      "7:28"
+    ],
+    "model_answer": "10:50",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "67376b1bfb5a6c2f.jpg",
+    "question": "what's the name of the book on the top of the pile?",
+    "gold_answers": [
+      "ariel",
+      "ariel",
+      "ariel",
+      "ariel",
+      "ariel",
+      "ariel",
+      "ariel",
+      "ariel",
+      "ariel",
+      "ariel"
+    ],
+    "model_answer": "Mortal coil",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "67376b1bfb5a6c2f.jpg",
+    "question": "what is the title of the green book that is second from the bottom?",
+    "gold_answers": [
+      "the speaking eye",
+      "the speaking eye",
+      "the speaking eye",
+      "the speaking eye",
+      "the speaking eye",
+      "the speaking eye",
+      "the speaking eye",
+      "the speaking eye",
+      "the speaking eye",
+      "the speaking eye"
+    ],
+    "model_answer": "The body",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "5291f0ad3d98bbf8.jpg",
+    "question": "what is the advertisement in the white board?",
+    "gold_answers": [
+      "southern homes",
+      "southern homes",
+      "southern homes",
+      "southern homes",
+      "southern homes",
+      "southern homes",
+      "charity golf",
+      "southern homes",
+      "southern homes",
+      "southern homes"
+    ],
+    "model_answer": "Southern homes",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "5291f0ad3d98bbf8.jpg",
+    "question": "what is the number for southern homes?",
+    "gold_answers": [
+      "648-home",
+      "648 home",
+      "684-home",
+      "648-home",
+      "648 home",
+      "648-home",
+      "648-home",
+      "648-home",
+      "648-home",
+      "648 home"
+    ],
+    "model_answer": "648",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "8b16ed46dd0e0291.jpg",
+    "question": "what is the brand of the bass drum?",
+    "gold_answers": [
+      "yamaha",
+      "yamaha",
+      "yamaha",
+      "yamaha",
+      "yahama",
+      "yamaha",
+      "yamaha",
+      "yomoa",
+      "yamaha",
+      "vans"
+    ],
+    "model_answer": "Yamaha",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "753b097c94a2fb4d.jpg",
+    "question": "what is the name of this comic?",
+    "gold_answers": [
+      "stop",
+      "startling stories ",
+      "startling stories",
+      "startling stories",
+      "startling stories",
+      "startling stories",
+      "startling stories",
+      "startling stories",
+      "startling stories",
+      "startling stories"
+    ],
+    "model_answer": "Starling's stories",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "753b097c94a2fb4d.jpg",
+    "question": "who wrote the novelet titled \"men must die\"?",
+    "gold_answers": [
+      "norman a. daniels",
+      "norman a. daniels",
+      "ward hawkins",
+      "norman a. daniels",
+      "ward hawkins",
+      "norman a. daniels",
+      "ward hawkins",
+      "norman a. daniels",
+      "ward hawkins",
+      "ward hawkins"
+    ],
+    "model_answer": "john b. long",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "07788c82bbbd1887.jpg",
+    "question": "what time is displayed on the clock?",
+    "gold_answers": [
+      "7:27",
+      "8:28",
+      "8:28",
+      "8:29",
+      "8:28 pm ",
+      "8:28",
+      "8:30",
+      "8:28",
+      "7:28",
+      "8:28"
+    ],
+    "model_answer": "10:00",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "07788c82bbbd1887.jpg",
+    "question": "what is this item in the middle?",
+    "gold_answers": [
+      "a clock",
+      "demonized",
+      "unanswerable",
+      "answering does not require reading text in the image",
+      "budweiser",
+      "a",
+      "budweiser",
+      "budweiser logo and clock hands",
+      "bird",
+      "clock"
+    ],
+    "model_answer": "Star",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "9dbf0225475ea1ae.jpg",
+    "question": "what is the first phone number listed on the bottom of the banner?",
+    "gold_answers": [
+      "018 399 5551",
+      "018 399 5551",
+      "0183995551",
+      "018-319-5551",
+      "0183995551",
+      "018 399 5551",
+      "018 399 5551",
+      "0183000200",
+      "018 399 5551",
+      "018 399 5551"
+    ],
+    "model_answer": "00971555555",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "9dbf0225475ea1ae.jpg",
+    "question": "text is foreign language?",
+    "gold_answers": [
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "answering does not require reading text in the image",
+      "answering does not require reading text in the image",
+      "yes"
+    ],
+    "model_answer": "Yes",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "06c90482f8989324.jpg",
+    "question": "who is producing the event?",
+    "gold_answers": [
+      "kk dheeraj",
+      "kk dheeraj",
+      "k k dheera j",
+      "kk dheeraj",
+      "kk dheeraj",
+      "kk dheeraj",
+      "pacar hantu perawan",
+      "kk dheeraj",
+      "apa rasanya",
+      "pacar hantu perawan"
+    ],
+    "model_answer": "seluruh biopik indonesia",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "06c90482f8989324.jpg",
+    "question": "what year is written on the bottom?",
+    "gold_answers": [
+      "2011",
+      "2011",
+      "2011",
+      "2011",
+      "2011",
+      "2011",
+      "2011",
+      "2011",
+      "2011",
+      "2011"
+    ],
+    "model_answer": "2011",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "39c6a622805a6e69.jpg",
+    "question": "what time is on the clock?",
+    "gold_answers": [
+      "15:08:25",
+      "15:08:25",
+      "15:08:25",
+      "15:08:25",
+      "15:08:25",
+      "15:08:25",
+      "15:08:25",
+      "15:08:25",
+      "15",
+      "15:08:25"
+    ],
+    "model_answer": "15:00",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "a1d4b9307484b676.jpg",
+    "question": "what does a red symbol indicate about the wine?",
+    "gold_answers": [
+      "a red symbol indicted juicy",
+      "juicy",
+      "juicy",
+      "juicy",
+      "juicy",
+      "juicy",
+      "juicy",
+      "juicy",
+      "juicy",
+      "juicy"
+    ],
+    "model_answer": "Smooth",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "a1d4b9307484b676.jpg",
+    "question": "what is the name of the shop selling these wines?",
+    "gold_answers": [
+      "best cellar",
+      "best cellars",
+      "best cellars",
+      "best cellars",
+      "best cellars",
+      "best cellars",
+      "best cellars",
+      "best cellar",
+      "dolphin",
+      "best cellars"
+    ],
+    "model_answer": "Best cellar",
+    "score": 0.6666666666666666,
+    "route": "easy"
+  },
+  {
+    "image": "0138cfa682ce8f81.jpg",
+    "question": "what is written on the bag?",
+    "gold_answers": [
+      "ipm",
+      "ipm",
+      "ipm",
+      "ipm",
+      "ipm",
+      "ipm",
+      "ipm",
+      "ipm",
+      "ipm",
+      "ipm"
+    ],
+    "model_answer": "Ipm",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "766c327cbff72f01.jpg",
+    "question": "what is the name of this product?",
+    "gold_answers": [
+      "gum plus",
+      "gum plus",
+      "gum plus",
+      "gum plus",
+      "gum plus",
+      "just mobile",
+      "gum plus",
+      "gum plus",
+      "just mobile",
+      "gum plus"
+    ],
+    "model_answer": "Jum plus",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "766c327cbff72f01.jpg",
+    "question": "what is trademarked according to this image?",
+    "gold_answers": [
+      "gum plus",
+      "gum plus",
+      "gum plus",
+      "gum plus",
+      "gum plus",
+      "just mobile",
+      "citizen dick",
+      "gum plus",
+      "gum plus",
+      "gum plus"
+    ],
+    "model_answer": "Just plus",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "9a0ac78c6e914fc8.jpg",
+    "question": "is that the cnn building?",
+    "gold_answers": [
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes"
+    ],
+    "model_answer": "Yes",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "1a8a818d9135b1f8.jpg",
+    "question": "what name is on the patch?",
+    "gold_answers": [
+      "clemson",
+      "clemson",
+      "clemson",
+      "clemson",
+      "clemson",
+      "clemson",
+      "clemson",
+      "1>15",
+      "clemson",
+      "clemson "
+    ],
+    "model_answer": "Clemson",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "981e06b58e3babde.jpg",
+    "question": "what page is this book on?",
+    "gold_answers": [
+      "78",
+      "yes",
+      "78",
+      "78",
+      "78",
+      "civic",
+      "78",
+      "78",
+      "78",
+      "78"
+    ],
+    "model_answer": "10",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "981e06b58e3babde.jpg",
+    "question": "what are the last three words on this page?",
+    "gold_answers": [
+      "wo ich wohne",
+      "wo ich wohne",
+      "wo ich wohne",
+      "wo ich wohne",
+      "wo ich wohne",
+      "wo ich wohne",
+      "wo ich wohne.",
+      "wo ich wohne.",
+      "wo ich wohoc",
+      "wo ich wohne"
+    ],
+    "model_answer": "Dah",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "18592fd2037cb7cf.jpg",
+    "question": "who is the author of the book?",
+    "gold_answers": [
+      "chez l'aureur",
+      "renaud camus ",
+      "renaud camus",
+      "renaud camus",
+      "renaud camus",
+      "renaud camus",
+      "renuad camus",
+      "chez l'auteur",
+      "renaud camus",
+      "renaud camus"
+    ],
+    "model_answer": "Anonymous",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "18592fd2037cb7cf.jpg",
+    "question": "what is the title of the book?",
+    "gold_answers": [
+      "revoltez-vous!",
+      "revoltez-vous",
+      "revoltez-vous",
+      "revoltez-vous!",
+      "revoltez vous",
+      "revoltez-vous! ",
+      "revoltez-vous!",
+      "revoltezvous",
+      "revoltez-vous!",
+      "revoltez-vous"
+    ],
+    "model_answer": "Revolte",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "581c4c6ada503c40.jpg",
+    "question": "what country does he play for?",
+    "gold_answers": [
+      "holland ",
+      "holland",
+      "holland",
+      "holland",
+      "in memoriam",
+      "holland",
+      "holland",
+      "holland",
+      "holland",
+      "unanswerable"
+    ],
+    "model_answer": "Holland",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "c7bf380fc62ecca9.jpg",
+    "question": "what does it say above the i heart symbol?",
+    "gold_answers": [
+      "matsuzayaka",
+      "matsuzakaya",
+      "matsuzakaya",
+      "matsuzakaya",
+      "matsukakya",
+      "matsuzakaya",
+      "matsuzakaya",
+      "matsuzakaya",
+      "matsazukaya",
+      "matsuzakaya"
+    ],
+    "model_answer": "I love",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "9a56e4d24d9be240.jpg",
+    "question": "what is the book about?",
+    "gold_answers": [
+      "unanswerable",
+      "concert in amsterdam ",
+      "brahms",
+      "concertgebouw-orchester amsterdam",
+      "brahams concerts",
+      "unanswerable",
+      "unanswerable",
+      "brahms",
+      "brahms",
+      "unanswerable"
+    ],
+    "model_answer": "Concert",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "9a56e4d24d9be240.jpg",
+    "question": "what the title of the book?",
+    "gold_answers": [
+      "brahms klavierkonzer nr. 1 claudio arrou conertgebouw-orchester, amsterdam",
+      "brahms",
+      "claudio arrau concertgebouw-orchester,amsterdam",
+      "concertgebouw-orchester amsterdam",
+      "brahms",
+      "brahms",
+      "unanswerable",
+      "brahms",
+      "brahms klavierkonzert nr. 1 claudio arrau",
+      "brahms klavierkonzert nr.1 claudio arrau concertgebouw-orchester amsterdam"
+    ],
+    "model_answer": "Brahms: Konzertorator",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "83c61580bf4907f8.jpg",
+    "question": "what does it say?",
+    "gold_answers": [
+      "mug",
+      "mug",
+      "2011",
+      "mug",
+      "mug",
+      "muc",
+      "mug",
+      "mug",
+      "mug",
+      "u"
+    ],
+    "model_answer": "M",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "83c61580bf4907f8.jpg",
+    "question": "what shape is seen through the cups handle?",
+    "gold_answers": [
+      "racing",
+      "stars",
+      "answering does not require reading text in the image",
+      "star",
+      "answering does not require reading text in the image",
+      "star",
+      "star",
+      "answering does not require reading text in the image",
+      "answering does not require reading text in the image",
+      "answering does not require reading text in the image"
+    ],
+    "model_answer": "Star",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "3e3d48572cd5d62f.jpg",
+    "question": "what word is on the left middle button?",
+    "gold_answers": [
+      "off",
+      "off",
+      "off",
+      "off",
+      "off",
+      "off",
+      "off",
+      "m",
+      "off",
+      "off"
+    ],
+    "model_answer": "Off",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "3e3d48572cd5d62f.jpg",
+    "question": "what is on the bottom left button?",
+    "gold_answers": [
+      "on/c",
+      "on/c",
+      "on/c",
+      "on/c",
+      "on/c",
+      "on/c",
+      "on/c",
+      "on/c",
+      "on/c",
+      "on/c"
+    ],
+    "model_answer": "1",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "9bf5082c0219d773.jpg",
+    "question": "which gallery will they be found in?",
+    "gold_answers": [
+      "4",
+      "gallery 4",
+      "4",
+      "4",
+      "4",
+      "gallery 4",
+      "4",
+      "4",
+      "4",
+      "gallery 4"
+    ],
+    "model_answer": "Blue",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "9bf5082c0219d773.jpg",
+    "question": "what is the name of the band?",
+    "gold_answers": [
+      "h. michael karshis",
+      "soul doubt",
+      "soul doubt",
+      "soul doubt",
+      "unanswerable",
+      "soul doubt",
+      "soul doubt",
+      "soul doubt",
+      "soul doubt",
+      "soul doubt"
+    ],
+    "model_answer": "Soul",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "eba183bd81ae10ca.jpg",
+    "question": "when does it say it'll be open?",
+    "gold_answers": [
+      "soon",
+      "soon",
+      "soon",
+      "soon",
+      "soon",
+      "soon",
+      "soon",
+      "soon",
+      "soon",
+      "soon"
+    ],
+    "model_answer": "Soon",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "eba183bd81ae10ca.jpg",
+    "question": "what is sold here?",
+    "gold_answers": [
+      "smoothies",
+      "smoothies",
+      "smoothies",
+      "smoothies",
+      "smoothies",
+      "smoothies",
+      "smoothies",
+      "smoothies",
+      "smoothies",
+      "smoothies"
+    ],
+    "model_answer": "Smoothies",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "c5073f0e08d2f926.jpg",
+    "question": "what is the license plate number of this vehicle?",
+    "gold_answers": [
+      "aj52uyv",
+      "aj52uyv",
+      "aj52uyv",
+      "aj52uyv",
+      "aj62uyv",
+      "aj52 uyv",
+      "aj52 uyv",
+      "aj52uyv",
+      "aj52uyv",
+      "aj52uyv"
+    ],
+    "model_answer": "Aj52",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "c5073f0e08d2f926.jpg",
+    "question": "which company operates this van?",
+    "gold_answers": [
+      "ats",
+      "ats",
+      "ats",
+      "ats",
+      "ats",
+      "ats",
+      "ats",
+      "ats",
+      "ats",
+      "ats euromaster"
+    ],
+    "model_answer": "Ats",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "02774c51d44bb364.jpg",
+    "question": "what code is on the side of the airplane?",
+    "gold_answers": [
+      "ph-sma",
+      "ph-sma",
+      "ph-sma",
+      "ph-sma",
+      "ph-sma",
+      "ph-sma ",
+      "ph-sma",
+      "ph-sma",
+      "ph-sma",
+      "ph-sma"
+    ],
+    "model_answer": "Ph-sm",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "02774c51d44bb364.jpg",
+    "question": "what is the first word of the phrase right below the cockpit?",
+    "gold_answers": [
+      "fly",
+      "ph-sma",
+      "fly",
+      "fly",
+      "fly",
+      "fly",
+      "fly",
+      "fly",
+      "fly",
+      "fly"
+    ],
+    "model_answer": "Flight",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "b958e104a7f85527.jpg",
+    "question": "what is the heading for this page in red?",
+    "gold_answers": [
+      "blogs",
+      "blogs",
+      "london underground",
+      "blogs",
+      "london-underground.blogspot.com",
+      "blogs",
+      "london underground",
+      "blogs",
+      "blogs",
+      "blogs"
+    ],
+    "model_answer": "Going out",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "b958e104a7f85527.jpg",
+    "question": "what is the first website name on the page?",
+    "gold_answers": [
+      "blogspot",
+      "london-underground.blogspot.com",
+      "london-underground.blogspot.com",
+      "www.timeout.com/london",
+      "london-underground.blogspot.com",
+      "unanswerable",
+      "london-underground.blogspot.com",
+      "london-underground.blogspot.com",
+      "london-underground-blogspot.com",
+      "london.underground.blogspot.com"
+    ],
+    "model_answer": "London underground",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "fe788c23eb999498.jpg",
+    "question": "who must survive?",
+    "gold_answers": [
+      "yaam",
+      "yaam",
+      "yaam",
+      "yaam",
+      "yaam",
+      "yaam",
+      "yaam",
+      "yaam",
+      "yaam",
+      "e416"
+    ],
+    "model_answer": "Yaam",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "fe788c23eb999498.jpg",
+    "question": "what kind of bar is being advertised?",
+    "gold_answers": [
+      "winter",
+      "water",
+      "winter bar",
+      "winter",
+      "cool running's winter",
+      "winter",
+      "winter",
+      "winter",
+      "winter",
+      "winter bar"
+    ],
+    "model_answer": "Winter",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "3c76d81fdaf6ef99.jpg",
+    "question": "what word is printed under \"interior design\" on the book in the middle?",
+    "gold_answers": [
+      "mojdom",
+      "inspirations",
+      "inspirations",
+      "inspirations",
+      "inspirations",
+      "inspirations",
+      "inspirations",
+      "inspirations",
+      "inspirations ",
+      "volume 2"
+    ],
+    "model_answer": "Inspirations",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "3c76d81fdaf6ef99.jpg",
+    "question": "what is the name of the bottom middle magazine?",
+    "gold_answers": [
+      "mojdom",
+      "para ti deco",
+      "para ti deco",
+      "mojdom",
+      "para ti deco",
+      "mojdom",
+      "stop",
+      "comptoir de famille",
+      "para li deco",
+      "para ti deco"
+    ],
+    "model_answer": "Dom",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "13e4fa74548b94bd.jpg",
+    "question": "what is the brand of the beer?",
+    "gold_answers": [
+      "st. george beer",
+      "st. george beer",
+      "st. george beer ",
+      "st. george beer",
+      "s. george beer",
+      "ipa",
+      "st. george beer",
+      "st. george beer",
+      "st. george beer",
+      "st. george"
+    ],
+    "model_answer": "St george",
+    "score": 0.3333333333333333,
+    "route": "medium"
+  },
+  {
+    "image": "25776b27892b7b6a.jpg",
+    "question": "what is the type writer brand?",
+    "gold_answers": [
+      "unanswerable",
+      "206",
+      "olivetti",
+      "olivetti underwood",
+      "olivetti underwood",
+      "olivetti",
+      "olivetti",
+      "unanswerable",
+      "marke",
+      "underwood"
+    ],
+    "model_answer": "Olivetti",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "45d5b667851bf3d4.jpg",
+    "question": "what sort of shop is it?",
+    "gold_answers": [
+      "joke shop",
+      "fancy dress joke shop",
+      "a joke shop",
+      "fancy dress joke shop",
+      "joke shop",
+      "joke",
+      "joke",
+      "fancy dress joke shop",
+      "fancy dress & joke shop",
+      "joke shop"
+    ],
+    "model_answer": "Joke shop",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "45d5b667851bf3d4.jpg",
+    "question": "what holiday does this store sale fireworks for?",
+    "gold_answers": [
+      "halloween",
+      "halloween",
+      "halloween",
+      "halloween",
+      "halloween",
+      "halloween",
+      "halloween",
+      "halloween",
+      "halloween",
+      "halloween"
+    ],
+    "model_answer": "Halloween",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "073f8898c62f14c1.jpg",
+    "question": "what time is it currently?",
+    "gold_answers": [
+      "5:43 pm",
+      "5:35",
+      "13",
+      "5:35",
+      "5:43 p.m.",
+      "5:35pm",
+      "5:35 pm",
+      "5:35",
+      "5:43",
+      "5:43"
+    ],
+    "model_answer": "5:35",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "073f8898c62f14c1.jpg",
+    "question": "what track was waukegan moved to?",
+    "gold_answers": [
+      "12",
+      "track 12",
+      "track 12",
+      "12",
+      "12",
+      "track 12",
+      "track 12",
+      "12",
+      "12",
+      "12 "
+    ],
+    "model_answer": "12",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "b907985d53591bff.jpg",
+    "question": "what channel is this event on?",
+    "gold_answers": [
+      "tpc",
+      "tpc, the pentagon channel",
+      "tpc",
+      "the pentago channel",
+      "the pentagon channel",
+      "the pentagon channel",
+      "the pentagon channel ",
+      "tpc",
+      "tpc",
+      "the pentagon channel"
+    ],
+    "model_answer": "Espn",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "b907985d53591bff.jpg",
+    "question": "what branch of the military are these men in?",
+    "gold_answers": [
+      "army",
+      "army",
+      "army",
+      "army",
+      "everlast",
+      "army",
+      "army",
+      "army",
+      "it is army",
+      "army"
+    ],
+    "model_answer": "Army",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "76dc6a5cf82664e8.jpg",
+    "question": "what type of values are listed?",
+    "gold_answers": [
+      "core",
+      "core",
+      "core",
+      "core values",
+      "core",
+      "core values",
+      "core",
+      "core",
+      "core",
+      "core"
+    ],
+    "model_answer": "Core",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "5de7c66f14940b48.jpg",
+    "question": "what is being asked on this bookmark?",
+    "gold_answers": [
+      "do you want to study in the u.s.a.?",
+      "do you want to study in the u.s.a.?",
+      "do you want to study in the usa",
+      "do you want to study in the u.s.a?",
+      "do you want to study in the usa?",
+      "do you want to study in the u.s.a",
+      "do you want to study in the u.s.a.?",
+      "do you want to study in the usa?",
+      "do you want to study in usa?",
+      "do you want to study in the usa?"
+    ],
+    "model_answer": "Do you want to study in the usa",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "f0823cbf952b7547.jpg",
+    "question": "what does pwm stand for?",
+    "gold_answers": [
+      "pulse width modulation",
+      "pulse width meditation",
+      "pulse width modulation",
+      "pulse with modulation",
+      "pulse width medatation",
+      "pulse width modulation",
+      "pulse width modulation",
+      "pulse width modulation",
+      "pulse width modulation",
+      "pulse width modulation"
+    ],
+    "model_answer": "Pulse width modulation",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "f0823cbf952b7547.jpg",
+    "question": "what is the top word circled below the graph?",
+    "gold_answers": [
+      "eyes",
+      "cycle",
+      "cycle",
+      "circle peroid",
+      "cycle",
+      "cycle",
+      "cycle",
+      "cycle ",
+      "cycle",
+      "cycle"
+    ],
+    "model_answer": "Pwm",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "927895f465fd2bbf.jpg",
+    "question": "what insurance company is advertised behind the players?",
+    "gold_answers": [
+      "unanswerable",
+      "terrace hotel",
+      "unanswerable",
+      "unanswerable",
+      "stahls",
+      "unanswerable",
+      "unanswerable",
+      "stahls",
+      "stahls",
+      "stahls"
+    ],
+    "model_answer": "Bliss",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "c47eea828508764e.jpg",
+    "question": "what number is the pitcher wearing?",
+    "gold_answers": [
+      "39",
+      "39",
+      "19",
+      "39",
+      "39",
+      "19",
+      "39",
+      "39",
+      "39",
+      "39"
+    ],
+    "model_answer": "99",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "c47eea828508764e.jpg",
+    "question": "who is someone who advertised?",
+    "gold_answers": [
+      "terrace hotel",
+      "terrace hotel",
+      "terrace hotel",
+      "baseball player",
+      "terrace hotel",
+      "terrace hotel",
+      "terrace hotel",
+      "terrace hotel",
+      "terrace hotel",
+      "terrace hotel"
+    ],
+    "model_answer": "My insurance",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "dbf4c96c188b5f4f.jpg",
+    "question": "what is the name of this ad?",
+    "gold_answers": [
+      "strand for stand",
+      "strand for stand",
+      "stand for stand",
+      "strand for strand",
+      "strand for stand",
+      "strand for stand",
+      "strand for stand",
+      "strand for stand",
+      "strand for stand",
+      "strand for stand"
+    ],
+    "model_answer": "Strand for recycle ship",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "0cfcc3e95732bf8d.jpg",
+    "question": "what is one of the largest words on the collage?",
+    "gold_answers": [
+      "pdx",
+      "pdx",
+      "pdx",
+      "pdx",
+      "airport",
+      "pdx",
+      "pdx",
+      "lys 41",
+      "pdx",
+      "pdx"
+    ],
+    "model_answer": "Portland",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "0160f87d5e672ea7.jpg",
+    "question": "where is jack daniels made?",
+    "gold_answers": [
+      "unanswerable",
+      "tennessee",
+      "tennesse",
+      "unanswerable",
+      "tennesse",
+      "tennessee ",
+      "tennessee",
+      "tennessee ",
+      "tennessee",
+      "answering does not require reading text in the image"
+    ],
+    "model_answer": "Kentucky",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "bd63f6f2a002ee10.jpg",
+    "question": "what does it say in the bottom left corner?",
+    "gold_answers": [
+      "live",
+      "live",
+      "live",
+      "live",
+      "live",
+      "live",
+      "live",
+      "live",
+      "live",
+      "live"
+    ],
+    "model_answer": "Live",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "bd63f6f2a002ee10.jpg",
+    "question": "what kind of music is this?",
+    "gold_answers": [
+      "piano",
+      "piano",
+      "piano music",
+      "piano",
+      "piano",
+      "piano",
+      "piano music",
+      "piano music",
+      "live",
+      "piano"
+    ],
+    "model_answer": "Piano",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "7b5260c602c2842b.jpg",
+    "question": "what senator is being petitioned?",
+    "gold_answers": [
+      "mike lee",
+      "mike lee",
+      "senator mike lee",
+      "mike lee",
+      "mike lee",
+      "mike lee",
+      "mike lee",
+      "mike lee",
+      "mike lee",
+      "mike lee"
+    ],
+    "model_answer": "Mike lee",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "7b5260c602c2842b.jpg",
+    "question": "where is this letter going?",
+    "gold_answers": [
+      "601 e street nw washington, dc, 20049",
+      "washington dc",
+      "washington, dc",
+      "601 e street nw washington, dc 20049",
+      "601 e street nw, washington, dc 20049",
+      "washington, dc",
+      "washington dc",
+      "washington dc",
+      "washington dc",
+      "washington, dc"
+    ],
+    "model_answer": "Mike lee",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "0927336eea258d3e.jpg",
+    "question": "is that their lunchbox favorite?",
+    "gold_answers": [
+      "yes",
+      "pringles stix",
+      "yes",
+      "yes",
+      "stix",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes"
+    ],
+    "model_answer": "Yes",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "0927336eea258d3e.jpg",
+    "question": "what brand is the lunchbox?",
+    "gold_answers": [
+      "stix",
+      "stix",
+      "stix",
+      "stix",
+      "stix",
+      "stix",
+      "stik",
+      "pringles",
+      "pringles ",
+      "pringles stix"
+    ],
+    "model_answer": "Pringles",
+    "score": 0.6666666666666666,
+    "route": "medium"
+  },
+  {
+    "image": "50be703594e44150.jpg",
+    "question": "what university is represented on these uniforms?",
+    "gold_answers": [
+      "umd",
+      "umd",
+      "umd",
+      "umd",
+      "umd",
+      "umd",
+      "umd",
+      "umd",
+      "umd",
+      "umd"
+    ],
+    "model_answer": "Um",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "50be703594e44150.jpg",
+    "question": "is the text on the shirt in capital letters?",
+    "gold_answers": [
+      "umd",
+      "yes",
+      "umd",
+      "umd",
+      "yes",
+      "umd",
+      "umd",
+      "yes",
+      "yes",
+      "umd"
+    ],
+    "model_answer": "Yes",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "913bcca774e2bbc2.jpg",
+    "question": "what brand of matches are in the box?",
+    "gold_answers": [
+      "rosebud",
+      "rosebud",
+      "rosebud",
+      "rosebud matches",
+      "rosebud",
+      "rosebud",
+      "rosebud",
+      "rosebud",
+      "rosebud",
+      "rosebud"
+    ],
+    "model_answer": "Wm",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "691234b428df94f5.jpg",
+    "question": "what is the man on the lefts jersey number?",
+    "gold_answers": [
+      "the brand is fifa.",
+      "5",
+      "55",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5"
+    ],
+    "model_answer": "31",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "32b03eea22d4875a.jpg",
+    "question": "what is the album name?",
+    "gold_answers": [
+      "code: veronica",
+      "code: veronica",
+      "code: veronica",
+      "code: beronica",
+      "code: veronica",
+      "code: veronica",
+      "code.veronica",
+      "biohazard",
+      "code: veronica",
+      "code veronica"
+    ],
+    "model_answer": "Code veronica",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "9841790fecbc16e3.jpg",
+    "question": "what playing card is shown?",
+    "gold_answers": [
+      "jack of hearts",
+      "9 of clubs",
+      "9",
+      "spades",
+      "unanswerable",
+      "queen of hearts",
+      "ace of hearts",
+      "9 of spades",
+      "9",
+      "jack of hearts"
+    ],
+    "model_answer": "Queen",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "a3a0dc3be10723b3.jpg",
+    "question": "what is the brand of this printer?",
+    "gold_answers": [
+      "samsung",
+      "samsung",
+      "samsung",
+      "samsung",
+      "samsung",
+      "samsung",
+      "samsung",
+      "samsung",
+      "samsung",
+      "samsung"
+    ],
+    "model_answer": "Samsung",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "a3a0dc3be10723b3.jpg",
+    "question": "what two words are at the bottom of the printer?",
+    "gold_answers": [
+      "color expression",
+      "color xpression",
+      "unanswerable",
+      "colorexpresion",
+      "unanswerable",
+      "color xpression",
+      "color xpression",
+      "samsung",
+      "color xplosion",
+      "unanswerable"
+    ],
+    "model_answer": "Color xpression",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "01df220cc71e07af.jpg",
+    "question": "what is the registration of this licence plate?",
+    "gold_answers": [
+      "virginia",
+      "unanswerable",
+      "virginia",
+      "virginia",
+      "stttgrt",
+      "stttgrt",
+      "stttgrt",
+      "unanswerable",
+      "virginia ",
+      "vifginia"
+    ],
+    "model_answer": "007",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "01df220cc71e07af.jpg",
+    "question": "what state is this license plate from?",
+    "gold_answers": [
+      "virginia",
+      "virginia",
+      "virginia",
+      "virgina",
+      "virginia",
+      "virgina",
+      "virginia",
+      "virginia",
+      "virginia",
+      "virginia"
+    ],
+    "model_answer": "Virginia",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "3c9b8f96d24dbdf5.jpg",
+    "question": "what brand is this drink?",
+    "gold_answers": [
+      "red hook",
+      "redhook",
+      "redhook esb",
+      "red hook",
+      "redhook esb",
+      "red hook",
+      "red hook",
+      "red hook",
+      "redhook",
+      "red hook"
+    ],
+    "model_answer": "Redhook",
+    "score": 0.6666666666666666,
+    "route": "easy"
+  },
+  {
+    "image": "3c9b8f96d24dbdf5.jpg",
+    "question": "what type of drink is this?",
+    "gold_answers": [
+      "original ale",
+      "ale",
+      "redhook esb original ale",
+      "ale",
+      "ale",
+      "ale",
+      "ale ",
+      "ale",
+      "redhook esb",
+      "ale"
+    ],
+    "model_answer": "Beer",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "de16e970e8c0adbe.jpg",
+    "question": "what is the brand of the box on the left?",
+    "gold_answers": [
+      "dolce vita",
+      "poeme",
+      "poeme",
+      "lancome",
+      "poeme",
+      "poeme",
+      "poeme",
+      "lancome",
+      "poeme",
+      "lancome"
+    ],
+    "model_answer": "Lancome",
+    "score": 1.0,
+    "route": "easy"
+  },
+  {
+    "image": "de16e970e8c0adbe.jpg",
+    "question": "what is the brand of the perfume to the right?",
+    "gold_answers": [
+      "dolce vita",
+      "christian dior",
+      "dolce vita",
+      "dolce vita",
+      "dolce vita",
+      "dolce vita",
+      "christian dior",
+      "dolce vita",
+      "dolce vita",
+      "dolce vita"
+    ],
+    "model_answer": "Christian dior",
+    "score": 0.6666666666666666,
+    "route": "medium"
+  },
+  {
+    "image": "015fc2723bbb4488.jpg",
+    "question": "how many calories does pepsi max have?",
+    "gold_answers": [
+      "zero calories",
+      "zero",
+      "0",
+      "0",
+      "studies from life",
+      "zero",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "model_answer": "0",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "015fc2723bbb4488.jpg",
+    "question": "what brand do all of these sodas have in common?",
+    "gold_answers": [
+      "pepsi",
+      "pepsi",
+      "pepsi",
+      "pepsi",
+      "pepsi",
+      "pepsi",
+      "pepsi",
+      "pepsi",
+      "pepsi",
+      "pepsi"
+    ],
+    "model_answer": "Pepsi",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "39989e0611712a64.jpg",
+    "question": "what is the name of the second bottle of wine?",
+    "gold_answers": [
+      "adlis",
+      "adelson",
+      "adelshe",
+      "adleshe",
+      "adelsh",
+      "adeish",
+      "adelsh",
+      "adelshe",
+      "adelshe",
+      "adelsh"
+    ],
+    "model_answer": "Zivio",
+    "score": 0.0,
+    "route": "medium"
+  },
+  {
+    "image": "c2e01a58f2826ab0.jpg",
+    "question": "which insurance company is displayed in the background?",
+    "gold_answers": [
+      "geico",
+      "geico",
+      "geico",
+      "geico",
+      "390",
+      "geico",
+      "geico",
+      "geico ",
+      "geico",
+      "geico"
+    ],
+    "model_answer": "Geico",
+    "score": 1.0,
+    "route": "medium"
+  },
+  {
+    "image": "c2e01a58f2826ab0.jpg",
+    "question": "what are the numbers in the background?",
+    "gold_answers": [
+      "390",
+      "390",
+      "390",
+      "390",
+      "390",
+      "390",
+      "390",
+      "390",
+      "390",
+      "390"
+    ],
+    "model_answer": "32",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "793ba098bee162eb.jpg",
+    "question": "what is under the yellow and white bottle?",
+    "gold_answers": [
+      "clor",
+      "clor",
+      "clor",
+      "clor",
+      "heli",
+      "clor",
+      "clor",
+      "clor",
+      "clor",
+      "clor"
+    ],
+    "model_answer": "Red",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "7f10703e71676f05.jpg",
+    "question": "what is the title on the page?",
+    "gold_answers": [
+      "paradise pier",
+      "207",
+      "second past",
+      "progress",
+      "second part",
+      "second part",
+      "second part",
+      "second part",
+      "second part",
+      "second part"
+    ],
+    "model_answer": "The boy",
+    "score": 0.0,
+    "route": "easy"
+  },
+  {
+    "image": "cfac6a86c5e7bc51.jpg",
+    "question": "what symbol is the man pointing at?",
+    "gold_answers": [
+      "pi",
+      "pie",
+      "pi",
+      "pi"

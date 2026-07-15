@@ -1,0 +1,24 @@
+{
+  "model": "instructblip",
+  "bench": "pope",
+  "metrics": {
+    "accuracy": 0.7883333333333333,
+    "precision": 0.7346717308735757,
+    "recall": 0.9026666666666666,
+    "f1": 0.8100508525276697,
+    "yes_ratio": 0.6143333333333333
+  },
+  "efficiency": {
+    "n_samples": 3000,
+    "ms_per_sample_mean": 1409.8924686079845,
+    "ms_per_sample_p50": 1260.066700167954,
+    "ms_per_token": 120.44872439412102,
+    "route_mix": {
+      "easy": 2139,
+      "medium": 861
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 16.2317312
+  },
+  "predictions_file": "results\\instructblip\\pope_adv_predictions.json"
+}
