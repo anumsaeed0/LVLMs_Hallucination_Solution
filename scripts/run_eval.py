@@ -106,9 +106,15 @@ def main():
                "metrics": m.__dict__, "efficiency": prof.summary(),
                "predictions_file": preds_out}
     Path(out).parent.mkdir(parents=True, exist_ok=True)
+<<<<<<< HEAD
     with open(out, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
     with open(preds_out, "w", encoding="utf-8") as f:
+=======
+    with open(out, "w") as f:
+        json.dump(payload, f, indent=2)
+    with open(preds_out, "w") as f:
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
         json.dump(records, f, indent=2, ensure_ascii=False)
     print(json.dumps(payload, indent=2))
     print(f"[predictions] {len(records)} records -> {preds_out}")

@@ -14,6 +14,7 @@
       "cigarette",
       "cigarette"
     ],
+<<<<<<< HEAD
     "model_answer": "Cigarette",
     "score": 1.0,
     "route": "medium"
@@ -21755,3 +21756,6 @@
     "route": "medium"
   }
 ]
+=======
+    "model_answer": 
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9

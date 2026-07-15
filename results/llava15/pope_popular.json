@@ -1,20 +1,24 @@
 {
+  "model": "llava15",
+  "bench": "pope",
   "metrics": {
-    "accuracy": 0.9,
-    "precision": 0.8703703703703703,
-    "recall": 0.94,
-    "f1": 0.9038461538461539,
-    "yes_ratio": 0.54
+    "accuracy": 0.8436666666666667,
+    "precision": 0.8052101835405565,
+    "recall": 0.9066666666666666,
+    "f1": 0.8529319535904673,
+    "yes_ratio": 0.563
   },
   "efficiency": {
-    "n_samples": 100,
-    "ms_per_sample_mean": 39248.09463097714,
-    "ms_per_sample_p50": 38473.46800006926,
-    "ms_per_token": 2454.540001937282,
+    "n_samples": 3000,
+    "ms_per_sample_mean": 1136.684762433637,
+    "ms_per_sample_p50": 1166.6856999509037,
+    "ms_per_token": 72.30359152939616,
     "route_mix": {
-      "medium": 100
+      "medium": 1472,
+      "easy": 1528
     },
     "etv_utilization_mean": null,
-    "peak_vram_gb": null
-  }
+    "peak_vram_gb": 18.649286656
+  },
+  "predictions_file": "results\\pope_popular_predictions.json"
 }

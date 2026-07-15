@@ -2,11 +2,16 @@
   "model": "qwenvl",
   "bench": "aokvqa",
   "metrics": {
+<<<<<<< HEAD
     "accuracy": 0.552256186317322,
+=======
+    "accuracy": 0.009898107714701601,
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
     "n_samples": 1145
   },
   "efficiency": {
     "n_samples": 1145,
+<<<<<<< HEAD
     "ms_per_sample_mean": 537.2593009547538,
     "ms_per_sample_p50": 491.0182999446988,
     "ms_per_token": 333.4210837903486,
@@ -16,6 +21,17 @@
     },
     "etv_utilization_mean": null,
     "peak_vram_gb": 19.110557184
+=======
+    "ms_per_sample_mean": 26731.176565324797,
+    "ms_per_sample_p50": 22755.844600033015,
+    "ms_per_token": 1160.06659973078,
+    "route_mix": {
+      "easy": 516,
+      "medium": 629
+    },
+    "etv_utilization_mean": null,
+    "peak_vram_gb": 20.18303232
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
   },
   "predictions_file": "results\\qwenvl\\aokvqa_eval_predictions.json"
 }

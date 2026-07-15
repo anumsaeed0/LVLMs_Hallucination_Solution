@@ -18,12 +18,16 @@ Notes:
 """
 from __future__ import annotations
 
+<<<<<<< HEAD
 import os
+=======
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
 import torch
 import torch.nn.functional as F
 from PIL import Image
 from transformers import AutoProcessor, Qwen2VLForConditionalGeneration
 
+<<<<<<< HEAD
 from .qwen_runtime import (
     Qwen2VLDecodeSession,
     build_qwen_mrope_positions,
@@ -32,6 +36,8 @@ from .qwen_runtime import (
     visual_token_slice_for_row,
 )
 
+=======
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
 MERGE = 2  # spatial merge size
 
 
@@ -54,6 +60,7 @@ class QwenVLAdapter:
         self.model = Qwen2VLForConditionalGeneration.from_pretrained(
             model_id, torch_dtype=self.dtype,
             attn_implementation="eager").to(self.device)
+<<<<<<< HEAD
         
         # in glimpse/models/qwenvl.py __init__, right after the model load:
         import os
@@ -63,6 +70,9 @@ class QwenVLAdapter:
             model_id, min_pixels=min_pixels, max_pixels=max_pixels)
         
         # self.processor = AutoProcessor.from_pretrained(model_id)
+=======
+        self.processor = AutoProcessor.from_pretrained(model_id)
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
         self.tokenizer = self.processor.tokenizer
         cfg = self.model.config
         self.n_layers = cfg.num_hidden_layers
@@ -70,6 +80,7 @@ class QwenVLAdapter:
         self.head_dim = cfg.hidden_size // cfg.num_attention_heads
         self.image_token_id = cfg.image_token_id
 
+<<<<<<< HEAD
     @property
     def eos_token_ids(self) -> set[int]:
         return get_qwen_eos_token_ids(self.model, self.tokenizer)
@@ -78,6 +89,8 @@ class QwenVLAdapter:
         """Fresh per-stream decoder; never share across positive/negative paths."""
         return Qwen2VLDecodeSession(self.model, self.tokenizer)
 
+=======
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
     def attn_modules(self):
         return [l.self_attn for l in self.model.model.layers]
 
@@ -123,6 +136,7 @@ class QwenVLAdapter:
             "image_grid_thw": torch.cat([enc_full["image_grid_thw"].cpu(),
                                          enc_no_query["image_grid_thw"].cpu()]),
         }
+<<<<<<< HEAD
         position_ids, _ = build_qwen_mrope_positions(
             self.model,
             batch["input_ids"],
@@ -155,6 +169,20 @@ class QwenVLAdapter:
     def grid_hw(self, batch: dict) -> tuple[int, int]:
         # Original-image UCP grid (first image row in the 2-image UCP tensor).
         return merged_grid_hw(batch["image_grid_thw"][0], merge_size=MERGE)
+=======
+        self._last_pad = max_len - enc_full["input_ids"].shape[1]
+        self._last_grid = enc_full["image_grid_thw"][0].tolist()  # [t, h, w]
+        return {k: v.to(self.device) for k, v in batch.items()}
+
+    def visual_token_slice(self, batch: dict) -> slice:
+        ids = batch["input_ids"][0]
+        pos = (ids == self.image_token_id).nonzero(as_tuple=True)[0]
+        return slice(int(pos[0]), int(pos[-1]) + 1)
+
+    def grid_hw(self, batch: dict) -> tuple[int, int]:
+        _, h, w = self._last_grid
+        return (h // MERGE, w // MERGE)
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
 
     def project_map(self, hgca: torch.Tensor, batch: dict) -> torch.Tensor:
         return hgca  # grid-isomorphic

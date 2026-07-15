@@ -132,6 +132,7 @@ class GlimpsePipeline:
                 neg = a.build_inputs(crop.image_neg, query) if make_cf else None
                 box = crop.box
 
+<<<<<<< HEAD
             t_pre = _tick()
 
             # text, stats = etv_generate(
@@ -156,6 +157,12 @@ class GlimpsePipeline:
                     create_decode_session=getattr(a, "create_decode_session",
                                                   None),
                     eos_token_ids=getattr(a, "eos_token_ids", None))
+=======
+            text, stats = etv_generate(
+                getattr(a, "decode_model", a.model), pos, neg,
+                tvhd_fn=a.tvhd_proxy_fn(None),  # adapter-provided per-step proxy
+                cfg=cfg.etv, tokenizer=a.tokenizer)
+>>>>>>> c367cdd9d69f45c794e43b89df472313699530e9
         finally:
             self.scaler.enabled = False
 
